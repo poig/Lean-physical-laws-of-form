@@ -30,18 +30,24 @@ This work extends **George Spencer-Brown's *Laws of Form* (1969)**.
 ## The Hierarchy of Structure
 
 ```
-Level 0: VOID                    (nothing)
+Level 0:   VOID
     ↓
-Level 1: DISTINCTION             [A, B] ≠ 0 — objects exist, can be told apart
+Level 1:   DISTINCTION             [A, B] ≠ 0 — The Primitive
     ↓
-Level 2: TRANSFORMATION          f : A → B — can move between objects  
+Level 2:   META-DISTINCTION        Constraint on Distinction  ← UNIFIED!
+           - Time (Causal constraint)
+           - Space (Locality constraint)
+           - Complexity (Resource constraint)
+           - Observability (Structural constraint)
     ↓
-Level 3: NON-COMMUTATIVITY       [f, g] ≠ 0 — order matters
+Level 3:   TRANSFORMATION          f : A → B
     ↓
-Level 4: PHYSICS                 Lie algebras, gauge theory, quantum mechanics
+Level 4:   NON-COMMUTATIVITY       [f, g] ≠ 0
+    ↓
+Level 5:   PHYSICS                 Standard Model, QFT, GR
 ```
 
-Each level requires the previous. This is the structure of reality.
+**Key Insight:** Time, Space, and Complexity are not separate things. They are all **Constraints** on the primitive act of distinction.
 
 ---
 
@@ -50,11 +56,11 @@ Each level requires the previous. This is the structure of reality.
 | Level | Concept | File | Status |
 |-------|---------|------|--------|
 | 1 | Distinction | `Foundations/Distinction.lean` | ✅ Complete |
+| 2 | **Meta-Distinction** | `Foundations/MetaDistinction.lean` | ✅ UNIFIED |
+| 3 | Transformation | `Foundations/Transformation.lean` | ✅ Complete |
 | 1 | Indistinguishability Collapse | `Foundations/Collapse.lean` | ✅ Complete |
 | 1 | Master Necessity | `Foundations/Existence.lean` | ✅ Complete |
-| 1 | Foundation Limit | `Foundations/Optimality.lean` | ✅ Complete |
 | 1 | Laws of Form | `Foundations/LawsOfForm.lean` | ✅ Complete |
-| 2 | Transformation | `Foundations/Transformation.lean` | ✅ Complete |
 | - | Impossibility Theorems | `ImpossibilityTheorems.lean` | ✅ Complete |
 
 ---
