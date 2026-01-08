@@ -25,6 +25,7 @@ import PhysicalLoF.Foundations.Collapse
 import PhysicalLoF.Foundations.Existence
 import PhysicalLoF.Foundations.Optimality
 import PhysicalLoF.Foundations.LawsOfForm
+import PhysicalLoF.Foundations.Transformation
 
 -- Impossibility Theorems (Gödel, Turing, Heisenberg)
 import PhysicalLoF.ImpossibilityTheorems
