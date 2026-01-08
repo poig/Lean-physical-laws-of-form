@@ -1,0 +1,11 @@
+{"plugins": [],
+ "package": "physical-laws-of-form",
+ "options": {},
+ "name": "PhysicalLoF.Foundations.Existence",
+ "isModule": false,
+ "importArts":
+ {"PhysicalLoF.Foundations.Distinction":
+  ["/home/poig/project/physical-laws-of-form/.lake/build/lib/lean/PhysicalLoF/Foundations/Distinction.olean"],
+  "PhysicalLoF.Foundations.Collapse":
+  ["/home/poig/project/physical-laws-of-form/.lake/build/lib/lean/PhysicalLoF/Foundations/Collapse.olean"]},
+ "dynlibs": []}

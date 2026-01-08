@@ -1,0 +1,28 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["4fc19a7aafb79a44.olean"],
+  "i": "6add7cc3da662e9c.ilean",
+  "c": "fc0ea252c8de87c5.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/poig/project/physical-laws-of-form/.lake/build/lib/lean /home/poig/.elan/toolchains/leanprover--lean4---v4.27.0-rc1/bin/lean /home/poig/project/physical-laws-of-form/PhysicalLoF/Foundations/Distinction.lean -o /home/poig/project/physical-laws-of-form/.lake/build/lib/lean/PhysicalLoF/Foundations/Distinction.olean -i /home/poig/project/physical-laws-of-form/.lake/build/lib/lean/PhysicalLoF/Foundations/Distinction.ilean -c /home/poig/project/physical-laws-of-form/.lake/build/ir/PhysicalLoF/Foundations/Distinction.c --setup /home/poig/project/physical-laws-of-form/.lake/build/ir/PhysicalLoF/Foundations/Distinction.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["PhysicalLoF.Foundations.Distinction:deps",
+   [["deps",
+     [["«physical-laws-of-form»/PhysicalLoF:extraDep",
+       [["@«physical-laws-of-form»:extraDep", "00000000000006bb"]]],
+      ["imports", "00000000000006bb"]]],
+    ["libs",
+     [["import dynlibs", "00000000000006bb"],
+      ["package external libraries", "00000000000006bb"],
+      ["module dynlibs", "00000000000006bb"],
+      ["module plugins", "00000000000006bb"]]]]],
+  ["Lean 4.27.0, commit 2fcce7258eeb6e324366bc25f9058293b04b7547",
+   "6f43b597efea5d4c"],
+  ["/home/poig/project/physical-laws-of-form/PhysicalLoF/Foundations/Distinction.lean",
+   "85d93c0b19c234d4"],
+  ["options", "00000000000006bb"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "31d7ef1565ec716d"}
