@@ -70,41 +70,102 @@ Each level requires the previous. This is the structure of reality.
 - [x] Transformation and morphisms
 - [x] Non-commutativity definition
 
-### Phase 2: Category Theory 🔶 IN PROGRESS
-- [ ] Full category structure (objects, morphisms, composition)
-- [ ] Functors between categories
+### Phase 2: Set Theory 🔶 IN PROGRESS
+- [ ] ZFC axioms require distinction (∈ vs ∉)
+- [ ] Axiom of Choice and consequences
+- [ ] Vitali sets: non-measurable constructions
+- [ ] Connection: Set membership IS distinction
+
+### Phase 3: Analysis 🔶 PLANNED
+- [ ] Limits as distinction convergence (lim = approaching distinction)
+- [ ] Continuity as distinction-preserving maps
+- [ ] Derivatives as infinitesimal distinction (df/dx)
+- [ ] Integration as accumulated distinction
+- [ ] Connection: Calculus IS the study of changing distinctions
+
+### Phase 4: Measure Theory 🔶 PLANNED
+- [ ] Lebesgue measure as size-distinction function
+- [ ] Measurable vs non-measurable sets
+- [ ] Vitali set: escapes size-distinction
+- [ ] σ-algebras as distinguished collections
+- [ ] Connection: Measurement IS a form of distinction
+
+### Phase 5: Topology 🔶 PLANNED
+- [ ] Open/closed sets as distinguished regions
+- [ ] Separation axioms (T0, T1, Hausdorff)
+- [ ] Hausdorff = points distinguishable by neighborhoods
+- [ ] Homotopy groups: π₁ distinguishes loops
+- [ ] Connection: Topology IS distinguishable neighborhoods
+
+### Phase 6: Differential Geometry 🔶 PLANNED
+- [ ] Manifolds as locally distinguished patches
+- [ ] Curvature = [parallel transport] ≠ identity
+- [ ] Ricci flow: dg/dt = -2 Ric (distinction evolves!)
+- [ ] **Poincaré conjecture**: simply connected 3-manifolds → S³
+- [ ] General Relativity from spacetime distinction
+- [ ] Connection: Geometry IS curvature-distinction
+
+### Phase 7: Number Theory 🔶 PLANNED
+- [ ] Primes vs composites: [prime, composite] ≠ 0
+- [ ] Prime factorization as distinction structure
+- [ ] Riemann hypothesis: zeros distinguish prime distribution
+- [ ] Modular arithmetic: equivalence classes
+- [ ] Connection: Number theory IS arithmetic distinction
+
+### Phase 8: Category Theory 🔶 PLANNED
+- [ ] Objects = distinguished entities
+- [ ] Morphisms = transformations (Level 2)
+- [ ] Functors preserve distinction structure
 - [ ] Natural transformations
-- [ ] Adjunctions
-- [ ] Connection: Categories require distinction
+- [ ] Connection: Categories formalize distinction + transformation
 
-### Phase 3: Group Theory 🔶 PLANNED
-- [ ] Groups as symmetry structures
-- [ ] Rubik's cube as non-abelian group
-- [ ] Lie groups (continuous symmetries)
-- [ ] Connection: Group elements are distinguished, operations are morphisms
+### Phase 9: Homological Algebra 🔶 PLANNED
+- [ ] Chain complexes as distinguished sequences
+- [ ] Homology groups measure "holes"
+- [ ] Cohomology as obstruction to distinction
+- [ ] Exact sequences: distinction propagation
+- [ ] Connection: Homology IS algebraic distinction-counting
 
-### Phase 4: Lie Algebras 🔶 PLANNED
+### Phase 10: Group Theory 🔶 PLANNED
+- [ ] Group elements are distinguished
+- [ ] Group operations are morphisms
+- [ ] Rubik's cube: non-abelian group
+- [ ] Lie groups: continuous symmetries
+- [ ] Connection: Symmetry requires [before, after] distinction
+
+### Phase 11: Lie Algebras 🔶 PLANNED
 - [ ] Lie bracket [X, Y] = XY - YX
 - [ ] su(2) from Pauli matrices
-- [ ] su(3) from Gell-Mann matrices
-- [ ] Connection: Lie bracket IS distinction at the infinitesimal level
+- [ ] su(3) from Gell-Mann matrices (quarks!)
+- [ ] Representation theory
+- [ ] Connection: Lie bracket IS infinitesimal distinction
 
-### Phase 5: Physics 🔶 PLANNED
-- [ ] Quantum mechanics from [x̂, p̂] ≠ 0
-- [ ] Gauge theory from gauge group structure
+### Phase 12: Quantum Mechanics 🔶 PLANNED
+- [ ] Quantum states as distinguished vectors
+- [ ] Observables from [x̂, p̂] = iℏ
 - [ ] Heisenberg uncertainty as distinction limit
-- [ ] Connection: Physics IS applied non-commutativity
+- [ ] Superposition: distinguished basis states
+- [ ] Connection: QM IS applied non-commutativity
 
-### Phase 6: Complexity Theory 🔶 PLANNED
-- [ ] Dynamical Lie Algebra (DLA) dimension
-- [ ] DLA → trainability of quantum circuits
-- [ ] P ≠ NP as distinction complexity
-- [ ] BQP from quantum non-commutativity
+### Phase 13: Gauge Theory & Standard Model 🔶 PLANNED
+- [ ] Gauge groups SU(3) × SU(2) × U(1)
+- [ ] Quarks as SU(3) representations
+- [ ] Forces from gauge symmetry breaking
+- [ ] Higgs mechanism
+- [ ] Connection: Particles ARE Lie algebra manifestations
 
-### Phase 7: Integration with Existing Libraries 🔶 PLANNED
-- [ ] Connect to `Lean-QuantumInfo` (quantum information)
-- [ ] Connect to `FormalizedFormalLogic/Foundation` (Gödel's theorems)
-- [ ] Upstream useful contributions to Mathlib
+### Phase 14: Complexity Theory 🔶 PLANNED
+- [ ] P vs NP as distinction complexity
+- [ ] DLA dimension → trainability
+- [ ] BQP from quantum [A,B] ≠ 0
+- [ ] Kolmogorov complexity
+- [ ] Connection: Computational power FROM [A,B] structure
+
+### Phase 15: Integration & Publication 🔶 PLANNED
+- [ ] Connect to `Lean-QuantumInfo`
+- [ ] Connect to `FormalizedFormalLogic/Foundation`
+- [ ] Upstream contributions to Mathlib
+- [ ] Peer-reviewed publication
 
 ---
 
