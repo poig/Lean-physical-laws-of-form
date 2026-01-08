@@ -47,7 +47,7 @@ We extend this to physics, complexity theory, and provide machine-verified proof
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/physical-laws-of-form.git
+git clone https://github.com/poig/physical-laws-of-form.git
 cd physical-laws-of-form
 
 # Build with Lake

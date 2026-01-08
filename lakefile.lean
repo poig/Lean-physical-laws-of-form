@@ -2,7 +2,11 @@ import Lake
 open Lake DSL
 
 package «physical-laws-of-form» where
-  -- add package configuration options here
+  moreLinkArgs := #["-L./.lake/packages/LeanCopilot/.lake/build/lib", "-lctranslate2"]
+
+-- Mathlib for comprehensive mathematics (latest master)
+require mathlib from git
+  "https://github.com/leanprover-community/mathlib4" @ "master"
 
 lean_lib «PhysicalLoF» where
   -- add library configuration options here
