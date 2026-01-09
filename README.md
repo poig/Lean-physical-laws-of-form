@@ -32,22 +32,17 @@ This work extends **George Spencer-Brown's *Laws of Form* (1969)**.
 ```
 Level 0:   VOID
     ↓
-Level 1:   DISTINCTION             [A, B] ≠ 0 — The Primitive
+Level 1:   DISTINCTION             [A, B] ≠ 0
     ↓
-Level 2:   META-DISTINCTION        Constraint on Distinction  ← UNIFIED!
-           - Time (Causal constraint)
-           - Space (Locality constraint)
-           - Complexity (Resource constraint)
-           - Observability (Structural constraint)
+Level 2:   META-DISTINCTION        Structure / Constraint
     ↓
-Level 3:   TRANSFORMATION          f : A → B
+Level 3:   THE GRAND TRILOGY       Application of Level 2
+           - Logic (Gödel: Hidden Distinction)
+           - Complexity (P vs NP: Resource Constraint)
+           - Emergence (The Loop: Self-Organization)
     ↓
-Level 4:   NON-COMMUTATIVITY       [f, g] ≠ 0
-    ↓
-Level 5:   PHYSICS                 Standard Model, QFT, GR
+Level 4:   PHYSICS                 Standard Model
 ```
-
-**Key Insight:** Time, Space, and Complexity are not separate things. They are all **Constraints** on the primitive act of distinction.
 
 ---
 
@@ -56,12 +51,12 @@ Level 5:   PHYSICS                 Standard Model, QFT, GR
 | Level | Concept | File | Status |
 |-------|---------|------|--------|
 | 1 | Distinction | `Foundations/Distinction.lean` | ✅ Complete |
-| 2 | **Meta-Distinction** | `Foundations/MetaDistinction.lean` | ✅ UNIFIED |
-| 3 | Transformation | `Foundations/Transformation.lean` | ✅ Complete |
-| 1 | Indistinguishability Collapse | `Foundations/Collapse.lean` | ✅ Complete |
-| 1 | Master Necessity | `Foundations/Existence.lean` | ✅ Complete |
+| 2 | Meta-Distinction | `Foundations/MetaDistinction.lean` | ✅ UNIFIED |
+| 3 | **Logic (Gödel)** | `Logic/Goedel.lean` | ⏳ Building |
+| 3 | **Complexity (P/NP)** | `Complexity/ComplexityBarrier.lean` | ✅ Complete |
+| 3 | **Emergence** | `Foundations/Emergence.lean` | ✅ Complete |
+| 2 | Transformation | `Foundations/Transformation.lean` | ✅ Complete |
 | 1 | Laws of Form | `Foundations/LawsOfForm.lean` | ✅ Complete |
-| - | Impossibility Theorems | `ImpossibilityTheorems.lean` | ✅ Complete |
 
 ---
 
@@ -166,6 +161,195 @@ Level 5:   PHYSICS                 Standard Model, QFT, GR
 - [ ] BQP from quantum [A,B] ≠ 0
 - [ ] Kolmogorov complexity
 - [ ] Connection: Computational power FROM [A,B] structure
+
+---
+
+## 🎯 The Grand Unification: Capacity Overflow Theorem
+
+**Goal:** Prove all "impossibility theorems" are instances of **Distinction Capacity Overflow**.
+
+### Core Insight
+
+```
+All impossibility = Distinctions EXCEED Structure's Capacity
+```
+
+| Domain | Impossibility | Capacity Overflow |
+|--------|---------------|-------------------|
+| **Logic** | Gödel Incompleteness | Truths > Proof capacity |
+| **Computation** | Turing Halting | Programs > Decidable capacity |
+| **Computation** | Rice's Theorem | Properties > Computable capacity |
+| **Quantum** | Heisenberg Uncertainty | Conjugate pairs > Single measurement |
+| **Complexity** | NP-hard worst case | Solutions > Polynomial DLA |
+| **Measure** | Vitali non-measurable | Partitions > Lebesgue capacity |
+| **Physics** | Bekenstein Bound | Information > Spacetime region capacity |
+| **Social** | Arrow's Impossibility | Fairness axioms > Voting capacity |
+
+### Rigorous Proof Roadmap
+
+#### Phase A: Bridge to Lean-BQP-NP ✅ DONE
+- [x] Add `require BQP_NP from "../Lean-BQP-NP"` to lakefile
+- [x] Create `CapacityBridge.lean` 
+- [x] Map `DLA.dimension` → `Capacity`
+- [x] Theorem: `np_hard_is_capacity_overflow`
+
+#### Phase B: NP Overflow 🔶 IN PROGRESS
+- [ ] **Prove** `np_hard_dimension_bound` (currently `sorry` in BQP-NP)
+- [ ] Show DLA ≥ 2^{n/2} for NP-hard Hamiltonians
+- [ ] Formalize: `NPHard → Overflow (PolyTime) P`
+- **Library:** `Lean-BQP-NP/BQP_NP.lean`
+
+#### Phase C: Gödel Overflow 🔶 PLANNED
+- [ ] Define `ProofSystemCapacity : BoundedMetaDistinction`
+- [ ] Prove: `|TrueSentences| > |ProvableSentences|` (cardinality)
+- [ ] Theorem: `goedel_is_capacity_overflow`
+- **Library:** `Foundation` (has `exists_true_but_unprovable_sentence`)
+- **Our file:** `Logic/Goedel.lean`
+
+#### Phase D: Heisenberg Overflow 🔶 PLANNED
+- [ ] Import `Lean-QuantumInfo` for Hilbert spaces
+- [ ] Define `CommutatorCapacity : Nat`
+- [ ] Prove: `[X,P] ≠ 0 → Capacity = 1` (cannot measure both)
+- [ ] Theorem: `heisenberg_is_capacity_overflow`
+- **Library:** `Mathlib.Analysis.InnerProductSpace`
+
+#### Phase E: Vitali Overflow 🔶 PLANNED
+- [ ] Use `Mathlib.MeasureTheory.Measure.Lebesgue`
+- [ ] Access `VitaliFamily` definitions
+- [ ] Prove: `NonMeasurable ↔ Overflow (LebesgueMeasure)`
+- [ ] Theorem: `vitali_is_capacity_overflow`
+- **Library:** `Mathlib.MeasureTheory`
+
+#### Phase F: Turing & Rice Overflow 🔶 PLANNED
+- [ ] Prove: `Halting ↔ Overflow (DecidableCapacity)`
+- [ ] Prove: `Rice ↔ ∀ non-trivial property, Overflow (ComputableCapacity)`
+- [ ] Note: Rice generalizes Gödel to ALL semantic properties
+- **Library:** Could use `Foundation` or build from scratch
+
+#### Phase G: Bekenstein Overflow 🔶 PLANNED
+- [ ] Formalize: `S ≤ 2πkRE/ℏc` (Bekenstein bound)
+- [ ] Prove: Information > region capacity → Black hole / Hawking radiation
+- [ ] Connection to holographic principle
+- **Library:** Would need physics formalization
+
+#### Phase H: Arrow Overflow 🔶 PLANNED
+- [ ] Formalize Arrow's impossibility axioms
+- [ ] Prove: `Fairness axioms > Ranking capacity → Dictatorship`
+- [ ] Connection: Computational social choice
+- **Library:** Could formalize from scratch (no Lean library exists)
+
+#### Phase J: Self-Reference = Knowledge Emergence 🔶 PLANNED (Crown Jewel)
+- [ ] Formalize: `SelfReferential` structure (can observe its own distinctions)
+- [ ] Prove: `D observes [D, ¬D] → ∃ new_D, new_D ≠ D`
+- [ ] Connection to Lawvere's Fixed-Point Theorem
+- [ ] Connection to Hofstadter's Strange Loops
+- [ ] Insight: Comparison [≥, <] IS a distinction → recursion generates knowledge
+- **Library:** Could use category theory from mathlib
+
+#### Phase K: Sweet Spot Theorem 🔶 PLANNED (Dual of Overflow)
+- [ ] Prove: When distinctions ≤ capacity, system is stable
+- [ ] Formalize Landauer's Principle: `E ≥ kT ln(2)` per distinction
+- [ ] P problems = polynomial capacity sufficient
+- [ ] Decidable = finite capacity sufficient
+- [ ] Commuting observables [A,B] = 0 → simultaneous measurement works
+- **Insight:** Sweet spot uses [≥,<] which REQUIRES distinction (Level 1)
+
+#### Phase L: The Grand Unification 🔶 ULTIMATE GOAL
+- [ ] Prove the unified theorem:
+```lean
+theorem impossibility_is_overflow :
+  (Incompleteness T G) ↔ Overflow (ProofCapacity T) G    ∧
+  (Turing H)           ↔ Overflow (DecidableCapacity) H  ∧
+  (Rice P)             ↔ Overflow (ComputableCapacity) P ∧
+  (Heisenberg X P)     ↔ Overflow (MeasureCapacity) (X,P)∧
+  (NPHard P)           ↔ Overflow (PolyCapacity) P       ∧
+  (NonMeasurable S)    ↔ Overflow (LebesgueCapacity) S   ∧
+  (Bekenstein R E)     ↔ Overflow (SpacetimeCapacity) R  ∧
+  (Arrow V)            ↔ Overflow (VotingCapacity) V     ∧
+  (SelfReference D)    ↔ Overflow (D.Capacity) D'        -- Recursion!
+```
+- [ ] Prove the meta-theorem:
+```lean
+theorem all_comparison_needs_distinction :
+  (∃ comparison : α → α → Bool) → Distinguishable α
+```
+
+---
+
+## 📚 Appendix: Connections to Open Problems
+
+**Note:** These are speculative interpretations, NOT solutions. The framework may offer a *language* for thinking about these problems, but solving them requires deep specialized expertise.
+
+| Problem | Connection to Distinction | Status |
+|---------|--------------------------|--------|
+| **P vs NP** | Related via DLA/Capacity | Under investigation |
+| **Yang-Mills** | Non-commutativity connection | Conceptual only |
+| **Riemann** | Primes as atomic distinctions | Very speculative |
+| **Others** | Loose analogies | Not rigorous |
+
+> These connections are for exploration, not claims of breakthrough.
+
+---
+
+## 🔬 Phase N: Pure Math → Physics Constants
+
+**Goal:** Derive physical constants from pure mathematical capacity bounds under specific configurations.
+
+### The Approach
+
+```
+1. Pure Math: Finite system → Finite capacity C = f(n)
+2. Configuration: Specific structure (dimension, symmetry, etc.)
+3. Physics: C under this configuration → physical bound (Bekenstein, etc.)
+```
+
+### Pure Math Foundation (No Physics Variables)
+
+```lean
+/-- Fundamental Capacity Theorem: n elements → at most n(n-1)/2 distinctions -/
+theorem capacity_bound (n : ℕ) : MaxDistinctions (Fin n) = n.choose 2
+
+/-- Pigeonhole: Distinctions > Capacity → some indistinguishable -/
+theorem overflow_indistinguishable : Distinctions > Capacity → ∃ a b, ¬Distinguishable a b
+```
+
+### Configuration → Physics
+
+| Configuration | Physics Constant | How |
+|---------------|------------------|-----|
+| 3D sphere, Planck units | Bekenstein bound | S ≤ A / (4 l_P²) |
+| 4D spacetime, c invariant | Speed of light | Lorentz symmetry |
+| Non-commutative algebra | ℏ | [x,p] = iℏ |
+| Thermodynamic equilibrium | k (Boltzmann) | Energy/Temperature |
+
+### Research Questions
+
+- [ ] Can we derive S ∝ Area (not Volume) from pure symmetry?
+- [ ] Can non-commutativity [A,B] ≠ 0 give us ℏ scale?
+- [ ] Can Lorentz invariance emerge from distinction constraints?
+- [ ] Can thermodynamic constants emerge from information capacity?
+
+> **Note:** This is highly speculative but mathematically grounded. The goal is to show physics constants are not arbitrary but emerge from capacity constraints under specific configurations.
+
+### Status Summary
+
+| Component | File | Rigorous? |
+|-----------|------|-----------|
+| Distinction | `Foundations/Distinction.lean` | ✅ Proven |
+| MetaDistinction | `Foundations/MetaDistinction.lean` | ✅ Defined |
+| Capacity | `Foundations/MetaDistinction.lean` | ⚠️ 1 sorry |
+| NP → DLA | `Complexity/CapacityBridge.lean` | ⚠️ Uses BQP-NP axiom |
+| Gödel → Hidden | `Logic/Goedel.lean` | ✅ Uses Foundation |
+| Turing/Rice | Not yet | ❌ Planned |
+| Heisenberg | Not yet | ❌ Planned |
+| Vitali | Not yet | ❌ Planned |
+| Bekenstein | Not yet | ❌ Planned (physics) |
+| Arrow | Not yet | ❌ Planned (social choice) |
+| **Self-Reference** | Not yet | ❌ **Crown Jewel** |
+| **Sweet Spot** | Not yet | ❌ Dual of Overflow |
+| Grand Unification | Not yet | ❌ Ultimate Goal |
+
+---
 
 ### Phase 15: Integration & Publication 🔶 PLANNED
 - [ ] Connect to `Lean-QuantumInfo`
