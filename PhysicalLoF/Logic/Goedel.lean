@@ -62,9 +62,13 @@ theorem goedel_implies_hidden_distinction
   exact exists_true_but_unprovable_sentence T
 
 /--
-  This theorem confirms that Logic is just a subset of Meta-Distinction.
-  Some distinctions are Real but Unprovable.
+  **SUBSTANTIVE THEOREM**: Logic is a subset of Meta-Distinction.
+
+  Some distinctions are Real (true in ℕ) but Unprovable (T cannot observe them).
+  This is the formal content of Gödel's incompleteness.
 -/
-theorem logic_distinction_limit : True := trivial
+theorem logic_distinction_limit (T : ArithmeticTheory) [T.Δ₁] [𝗥₀ ⪯ T] [T.SoundOnHierarchy 𝚺 1] :
+    ∃ (δ : Sentence ℒₒᵣ), (ℕ ⊧ₘ δ) ∧ (T ⊬ δ) :=
+  exists_true_but_unprovable_sentence T
 
 end PhysicalLoF.Logic

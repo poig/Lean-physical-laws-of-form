@@ -27,10 +27,10 @@ namespace PhysicalLoF.Foundations
 /--
   Axiom: Explanation chains must terminate.
 
-  If every concept could be explained by a simpler concept,
-  we'd have infinite regress and no explanation at all.
-
-  Therefore, some concept must be primitive (unexplained).
+  JUSTIFICATION:
+  This is the "Principle of Sufficient Reason" or Aristotelian termination.
+  Without it, we accept infinite regress, which leaves all phenomena fundamentally unexplained.
+  We take this as a primitive axiom of rational inquiry.
 -/
 axiom no_infinite_regress :
   ∀ (ExplainedBy : Type → Type → Prop),
@@ -80,10 +80,8 @@ theorem foundation_implies_distinction
   There must be a level 0 (Distinction) that is not built from anything else.
 -/
 theorem foundation_limit_exists :
-    ∃ (Foundation : Type), (∀ (x : Foundation), x = x) := by
-  use Unit
-  intro d
-  rfl
+    ∃ (Foundation : Type), (∀ (x : Foundation), x = x) :=
+  ⟨Unit, fun _ => rfl⟩
 
 /--
   Conversely, distinguishability is a foundation.

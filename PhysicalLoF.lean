@@ -26,11 +26,20 @@ import PhysicalLoF.Foundations.Existence
 import PhysicalLoF.Foundations.Optimality
 import PhysicalLoF.Foundations.LawsOfForm
 import PhysicalLoF.Foundations.Emergence
+import PhysicalLoF.Foundations.SelfGrounding      -- Self-reference
+import PhysicalLoF.Foundations.SelfValidation     -- Self-validation
+import PhysicalLoF.Foundations.CategoryTheory    -- Initial object
+import PhysicalLoF.Foundations.Arithmetic        -- Peano axioms
+import PhysicalLoF.Foundations.RelatedTheories   -- Quasi-Set, HoTT, etc.
 
 import PhysicalLoF.ImpossibilityTheorems
 import PhysicalLoF.Complexity.ComplexityBarrier
 import PhysicalLoF.Complexity.CapacityBridge  -- Bridge to BQP-NP
+import PhysicalLoF.Complexity.Automata        -- Myhill-Nerode
+import PhysicalLoF.Complexity.ChomskyHierarchy -- Distinction capacity hierarchy
 import PhysicalLoF.Logic.Goedel
+import PhysicalLoF.Foundations.Combinatorics  -- Multinomial
+import PhysicalLoF.Foundations.Galois         -- Algebraic Indistinguishability
 
 namespace PhysicalLoF
 

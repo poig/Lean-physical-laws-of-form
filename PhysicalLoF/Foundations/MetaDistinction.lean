@@ -155,6 +155,22 @@ theorem unification_of_time_and_structure :
 
   This is the LOOP that drives reality.
 -/
-theorem the_complete_picture : True := trivial
+theorem the_complete_picture {U : Type*} [Fintype U] (M : BoundedMetaDistinction U) :
+    M.Capacity < Fintype.card U → ∃ x y : U, x ≠ y ∧ M.observe x = M.observe y := by
+  intro hcap
+  -- Use pigeonhole: more elements than observation values
+  have h_card_obs : Fintype.card (Fin M.Capacity) = M.Capacity := Fintype.card_fin M.Capacity
+  -- If observe were injective, we'd have card U ≤ Capacity
+  by_contra h_all
+  push_neg at h_all
+  -- h_all : ∀ x y, x ≠ y → M.observe x ≠ M.observe y
+  -- This means M.observe is injective
+  have hinj : Function.Injective M.observe := by
+    intro x y heq
+    by_contra hne
+    exact h_all x y hne heq
+  have := Fintype.card_le_of_injective M.observe hinj
+  rw [h_card_obs] at this
+  omega
 
 end PhysicalLoF.Foundations

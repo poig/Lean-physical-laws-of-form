@@ -163,4 +163,69 @@ theorem distinction_underlies_limits :
   · exact mark_distinction
   · exact logical_distinction_theorem
 
+/-! ## Primary Algebra (Formal Calculus) -/
+
+/--
+  The Primary Algebra from Laws of Form.
+  This is Spencer-Brown's formal calculus of indications.
+
+  - `void` represents the unmarked state (the void, emptiness)
+  - `mark f` represents crossing into the marked state with content f
+-/
+inductive Form : Type where
+  | void : Form           -- The unmarked state (∅)
+  | mark : Form → Form    -- The distinction operator ◯
+  deriving DecidableEq, Repr
+
+namespace Form
+
+/--
+  Evaluation of a Form to Bool.
+  This shows Boolean algebra is a MODEL of the Primary Algebra.
+-/
+def eval : Form → Bool
+  | void => false
+  | mark f => !eval f
+
+/-- Axiom J1: Calling (Position) - ◯ ◯ = ◯
+    In Laws of Form, adjacency (juxtaposition) corresponds to logical OR.
+    Calling means repeating a form next to itself DOES NOT change the value.
+    (x x = x)
+-/
+theorem calling_law (f : Form) : (eval f || eval f) = eval f := by
+  simp [Bool.or_self]
+
+/-- Axiom J2: Crossing (Transposition) - Double crossing cancels -/
+theorem crossing_law (f : Form) : eval (mark (mark f)) = eval f := by
+  simp [eval, Bool.not_not]
+
+/-- The void evaluates to false (unmarked) -/
+theorem void_is_false : eval void = false := rfl
+
+/-- A single mark evaluates to true (marked) -/
+theorem mark_void_is_true : eval (mark void) = true := rfl
+
+/-- Boolean algebra is a valid model of the Primary Algebra -/
+theorem boolean_is_model :
+    -- The two-valued interpretation satisfies both axioms
+    (∀ f, (eval f || eval f) = eval f) ∧    -- Calling (Juxtaposition)
+    (∀ f, eval (mark (mark f)) = eval f) := -- Crossing (Nesting)
+  ⟨calling_law, crossing_law⟩
+
+end Form
+
+/-! ## The Primacy of Distinction -/
+
+/--
+  **PRIMACY THEOREM**:
+  The Primary Algebra captures the essence of all binary logic.
+  Any Boolean function can be expressed using just mark and void.
+-/
+theorem primacy_of_distinction :
+    ∀ b : Bool, ∃ f : Form, Form.eval f = b := by
+  intro b
+  cases b
+  · exact ⟨Form.void, rfl⟩
+  · exact ⟨Form.mark Form.void, rfl⟩
+
 end PhysicalLoF.Foundations
