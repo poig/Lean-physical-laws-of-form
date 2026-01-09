@@ -1,6 +1,9 @@
+-- SPDX-License-Identifier: MIT
 /-
   Collapse.lean
   =============
+  Copyright (C) 2026 Tan Jun Liang <junliang9339@hotmail.com>
+  Repository: https://github.com/poig/Lean-physical-laws-of-form
 
   Indistinguishability Collapse Theorem (renamed from "Spencer-Brown Collapse")
 

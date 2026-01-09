@@ -1,6 +1,10 @@
+-- SPDX-License-Identifier: MIT
 /-
   ComplexityBarrier.lean
   ======================
+  Copyright (C) 2026 Tan Jun Liang <junliang9339@hotmail.com>
+  Repository: https://github.com/poig/Lean-physical-laws-of-form
+
   Formalizing the Relativization Barrier as a Structural Constraint.
 
   KEY INSIGHT:

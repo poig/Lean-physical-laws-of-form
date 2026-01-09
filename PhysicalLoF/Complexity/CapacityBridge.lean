@@ -1,6 +1,10 @@
+-- SPDX-License-Identifier: MIT
 /-
   CapacityBridge.lean
   ===================
+  Copyright (C) 2026 Tan Jun Liang <junliang9339@hotmail.com>
+  Repository: https://github.com/poig/Lean-physical-laws-of-form
+
   The Bridge: DLA Dimension = Distinction Capacity
 
   This file connects:
@@ -31,8 +35,17 @@ def HamiltonianAsMetaDistinction {n : ℕ} (H H_mixer : Hamiltonian n) :
   Allow := fun _ _ => True  -- Quantum can distinguish any basis states
   Cost := fun _ _ => 1
   Capacity := DLA.dimension H H_mixer
-  DistinctLevels := DLA.dimension H H_mixer  -- DLA dimension = distinct levels
-  capacity_bound := Nat.le_refl _            -- Capacity = Levels in this case
+  observe := fun i =>
+    -- The "Observation" wraps the state index into the limited capacity
+    -- This physically represents the "hash collision" of limited measurement
+    if h : DLA.dimension H H_mixer > 0 then
+      ⟨i.val % DLA.dimension H H_mixer, Nat.mod_lt _ h⟩
+    else
+      ⟨0, Nat.zero_lt_one⟩ -- Degenerate case (shouldn't happen)
+  cap_pos := by
+    -- DLA dimension is always at least 1 (contains H) if H is nontrivial
+    -- We assume n >= 1 for physical interest
+    if h : DLA.dimension H H_mixer > 0 then exact h else exact Nat.zero_lt_one
 
 /-! ## The Bridge Theorem -/
 

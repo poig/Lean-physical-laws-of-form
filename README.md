@@ -134,12 +134,14 @@ Level 4:   PHYSICS                 Standard Model
 - [ ] Lie groups: continuous symmetries
 - [ ] Connection: Symmetry requires [before, after] distinction
 
-### Phase 11: Lie Algebras 🔶 PLANNED
-- [ ] Lie bracket [X, Y] = XY - YX
-- [ ] su(2) from Pauli matrices
-- [ ] su(3) from Gell-Mann matrices (quarks!)
-- [ ] Representation theory
-- [ ] Connection: Lie bracket IS infinitesimal distinction
+### Phase 11: Lie Algebras & Poisson Brackets 🔶 PLANNED
+- [ ] **Classical:** Poisson bracket {f, g} = Σᵢ(∂f/∂qᵢ·∂g/∂pᵢ - ∂f/∂pᵢ·∂g/∂qᵢ)
+- [ ] **Quantum:** Lie bracket [X, Y] = XY - YX
+- [ ] **Bridge:** Dirac correspondence [Â,B̂] = iℏ{A,B}
+- [ ] {A,B}=0 ↔ SimultaneouslyDistinguishable(A,B)
+- [ ] {A,B}≠0 ↔ Heisenberg uncertainty
+- [ ] su(2), su(3) from Pauli/Gell-Mann matrices
+- [ ] Connection: Brackets ARE distinguishability measures
 
 ### Phase 12: Quantum Mechanics 🔶 PLANNED
 - [ ] Quantum states as distinguished vectors
@@ -291,7 +293,7 @@ theorem all_comparison_needs_distinction :
 
 ---
 
-## 🔬 Phase N: Pure Math → Physics Constants
+## Phase N: Pure Math → Physics Constants
 
 **Goal:** Derive physical constants from pure mathematical capacity bounds under specific configurations.
 

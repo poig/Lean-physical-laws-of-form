@@ -1,3 +1,7 @@
+-- SPDX-License-Identifier: MIT
+-- Copyright (C) 2026 Tan Jun Liang <junliang9339@hotmail.com>
+-- Repository: https://github.com/poig/Lean-physical-laws-of-form
+
 import Lake
 open Lake DSL
 
@@ -15,8 +19,8 @@ require Foundation from git
 -- BQP-NP for complexity theory (DLA, Hamiltonians, NP-hardness)
 -- Local dependency - bridges Distinction theory with Complexity theory
 -- require BQP_NP from "../Lean-BQP-NP"
-require Foundation from git
-  "https://github.com/poig/Lean-BQP-NP" @ "master"
+require BQP_NP from git
+  "https://github.com/poig/Lean-BQP-NP" @ "main"
 
 lean_lib «PhysicalLoF» where
   -- add library configuration options here

@@ -1,6 +1,9 @@
+-- SPDX-License-Identifier: MIT
 /-
   LawsOfForm.lean
   ================
+  Copyright (C) 2026 Tan Jun Liang <junliang9339@hotmail.com>
+  Repository: https://github.com/poig/Lean-physical-laws-of-form
 
   Spencer-Brown's Actual Laws of Form
 

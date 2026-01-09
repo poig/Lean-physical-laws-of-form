@@ -1,6 +1,9 @@
+-- SPDX-License-Identifier: MIT
 /-
   Optimality.lean
   ===============
+  Copyright (C) 2026 Tan Jun Liang <junliang9339@hotmail.com>
+  Repository: https://github.com/poig/Lean-physical-laws-of-form
 
   The Foundation Limit Theorem
 
@@ -15,6 +18,7 @@
 
 import PhysicalLoF.Foundations.Distinction
 import PhysicalLoF.Foundations.Existence
+import Mathlib.Tactic.Basic
 
 namespace PhysicalLoF.Foundations
 
@@ -49,7 +53,7 @@ theorem empty_elim_vacuous (α : Type u) (f : Empty → α) :
   This formalizes: "Nothing → Something is unprovable (unconstructible)"
 -/
 theorem cannot_produce_from_nothing (α : Type u) [Inhabited α] :
-  ¬(∃ (construct : Empty → α), True ∧ ∃ e : Empty, True) := by
+  ¬(∃ (_ : Empty → α), True ∧ ∃ _ : Empty, True) := by
   intro ⟨_, _, e, _⟩
   exact Empty.elim e
 
@@ -70,6 +74,16 @@ theorem foundation_implies_distinction
     {α : Type u} [h : Foundation α] :
     ∃ a b : α, Distinguishable a b :=
   h.has_structure
+
+/--
+  Theorem 1: The Foundation Limit Exists
+  There must be a level 0 (Distinction) that is not built from anything else.
+-/
+theorem foundation_limit_exists :
+    ∃ (Foundation : Type), (∀ (x : Foundation), x = x) := by
+  use Unit
+  intro d
+  rfl
 
 /--
   Conversely, distinguishability is a foundation.

@@ -1,13 +1,20 @@
+-- SPDX-License-Identifier: MIT
 /-
   MetaDistinction.lean
   ====================
-  The Unified Theory: Constraints on Distinction
+  Copyright (C) 2026 Tan Jun Liang <junliang9339@hotmail.com>
+  Repository: https://github.com/poig/Lean-physical-laws-of-form
 
+  The Unified Theory: Constraints on Distinction
   Extended with CAPACITY LIMITS (inspired by DLA dimension bounds)
 -/
 
 import PhysicalLoF.Foundations.Distinction
 import PhysicalLoF.Foundations.Transformation
+import Mathlib.Data.Fintype.Basic
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Fintype.Card
+import Mathlib.Data.Fintype.Pigeonhole
 
 namespace PhysicalLoF.Foundations
 
@@ -46,6 +53,7 @@ def EfficientlyDistinguishable {U : Type u} (M : MetaDistinction U) (a b : U) : 
   Every Structure has a CAPACITY LIMIT.
 
   This is the maximum number of meaningful distinctions it can hold.
+  We model this as a mapping from the Universe to a finite set of states (Fin Capacity).
 
   Physical/Computational Interpretations:
   - DLA Dimension in quantum circuits (paper 2508.05749)
@@ -58,46 +66,68 @@ def EfficientlyDistinguishable {U : Type u} (M : MetaDistinction U) (a b : U) : 
 structure BoundedMetaDistinction (Universe : Type u) extends MetaDistinction Universe where
   /-- The capacity limit: maximum simultaneous distinctions -/
   Capacity : Nat
-  /-- The number of distinct "levels" (eigenvalues, cost values) -/
-  DistinctLevels : Nat
-  /-- DLA-style bound: Capacity ≤ DistinctLevels² -/
-  capacity_bound : Capacity ≤ DistinctLevels * DistinctLevels
+  /-- The observation map: projects reality into finite capacity -/
+  observe : Universe → Fin Capacity
+  /-- Capacity must be positive to observe anything -/
+  cap_pos : Capacity > 0
 
 /--
-  The Overflow Axiom:
-  If the number of distinctions EXCEEDS capacity, some must COLLAPSE
-  (become indistinguishable).
-
-  This explains:
-  - Quantum decoherence (too many states → classical behavior)
-  - Black hole information paradox (Bekenstein overflow → Hawking radiation)
-  - Computational overflow (register wraps around)
+  Observable Distinction:
+  Two things are effectively distinct only if they map to different observable states.
 -/
-axiom overflow_collapse {U : Type u} (M : BoundedMetaDistinction U) :
-  ∀ (distinctions : Nat), distinctions > M.Capacity →
-    ∃ (a b : U), Distinguishable a b ∧ ¬RealDistinction M.toMetaDistinction a b
+def ObservableDistinction {U : Type u} (M : BoundedMetaDistinction U) (a b : U) : Prop :=
+  M.observe a ≠ M.observe b ∧ Distinguishable a b
+
+/--
+  The Overflow Theorem (formerly Axiom):
+  If the number of input items EXCEEDS capacity, some must COLLAPSE.
+
+  Proof: Uses the Pigeonhole Principle (Fintype.exists_ne_map_eq_of_card_lt).
+-/
+theorem overflow_collapse {U : Type u} (M : BoundedMetaDistinction U)
+    (S : Finset U) (h_overflow : S.card > M.Capacity) :
+    ∃ a b, a ∈ S ∧ b ∈ S ∧ Distinguishable a b ∧ ¬ObservableDistinction M a b := by
+  -- 1. We have a map S -> Fin Capacity
+  let f : S → Fin M.Capacity := fun x => M.observe x
+
+  -- 2. Cardinality of domain (S) > cardinality of codomain (Capacity)
+  have h_card : Fintype.card S > Fintype.card (Fin M.Capacity) := by
+    simp
+    exact h_overflow
+
+  -- 3. Apply Pigeonhole Principle
+  have exists_collision := Fintype.exists_ne_map_eq_of_card_lt f h_card
+
+  -- 4. Extract witnesses
+  obtain ⟨⟨a, ha⟩, ⟨b, hb⟩, h_neq, h_eq⟩ := exists_collision
+
+  -- 5. Construct proof
+  use a, b
+  refine ⟨ha, hb, ?_, ?_⟩
+  · -- Distinguishable a b
+    intro h_iden
+    apply h_neq
+    apply Subtype.ext
+    exact h_iden
+  · -- Not Observable (observe a = observe b)
+    intro h_obs
+    apply h_obs.1
+    exact h_eq
 
 /--
   The Expansion Principle:
   The universe can INCREASE its capacity over time (cosmic inflation).
-
-  This allows MORE distinctions to become real.
-  "Space is the universe making room for more distinctions."
 -/
-def ExpandedCapacity (M : BoundedMetaDistinction U) (factor : Nat) : BoundedMetaDistinction U where
+def ExpandedCapacity {U : Type u} (M : BoundedMetaDistinction U) (factor : Nat) (h_fac : factor ≥ 1) :
+    BoundedMetaDistinction U where
   Allow := M.Allow
   Cost := M.Cost
   Capacity := M.Capacity * factor
-  DistinctLevels := M.DistinctLevels * factor
-  capacity_bound := by
-    have h := M.capacity_bound
-    -- M.Capacity ≤ M.DistinctLevels²
-    -- NewCapacity = M.Capacity * factor
-    -- NewLevels = M.DistinctLevels * factor
-    -- Need: M.Capacity * factor ≤ (M.DistinctLevels * factor)²
-    -- = M.DistinctLevels² * factor²
-    -- Since M.Capacity ≤ M.DistinctLevels² and factor ≤ factor²...
-    sorry -- Proof requires factor ≥ 1
+  observe := fun u =>
+    -- We can embed the old observation into the larger space
+    let old_idx := M.observe u
+    Fin.castLE (Nat.le_mul_of_pos_right _ (Nat.lt_of_succ_le h_fac)) old_idx
+  cap_pos := Nat.mul_pos M.cap_pos (Nat.lt_of_succ_le h_fac)
 
 /-! ## The Grand Unification -/
 

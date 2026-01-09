@@ -1,6 +1,9 @@
+-- SPDX-License-Identifier: MIT
 /-
   ImpossibilityTheorems.lean
   ==========================
+  Copyright (C) 2026 Tan Jun Liang <junliang9339@hotmail.com>
+  Repository: https://github.com/poig/Lean-physical-laws-of-form
 
   Formal Connections: Distinction Underlies Impossibility Theorems
 
