@@ -14,10 +14,9 @@ require Foundation from git
 
 -- BQP-NP for complexity theory (DLA, Hamiltonians, NP-hardness)
 -- Local dependency - bridges Distinction theory with Complexity theory
-require BQP_NP from "../Lean-BQP-NP"
-
--- require Foundation from git
---   "https://github.com/poig/Lean-BQP-NP" @ "master"
+-- require BQP_NP from "../Lean-BQP-NP"
+require Foundation from git
+  "https://github.com/poig/Lean-BQP-NP" @ "master"
 
 lean_lib «PhysicalLoF» where
   -- add library configuration options here
