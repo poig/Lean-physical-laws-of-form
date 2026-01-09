@@ -109,7 +109,10 @@
 - [ ] Observables from [x̂, p̂] = iℏ
 - [ ] Heisenberg uncertainty as distinction limit
 - [ ] Superposition: distinguished basis states
-- [ ] Connection: QM IS applied non-commutativity
+- [ ] **Identical Particles**: Exchange operator P_ij
+- [ ] **Bosons**: P_ij|ψ⟩ = +|ψ⟩ (symmetric, ¬Distinguishable)
+- [ ] **Fermions**: P_ij|ψ⟩ = -|ψ⟩ (antisymmetric, Pauli exclusion)
+- [ ] Connection: QM IS applied non-commutativity + exchange symmetry
 
 ### Phase 14: Gauge Theory & Standard Model 🔶 PLANNED
 - [ ] Gauge groups SU(3) × SU(2) × U(1)
@@ -122,10 +125,13 @@
 - [x] Chomsky Hierarchy = Distinction Capacity (Regular < CFG < CS < TM)
 - [x] Pumping Lemmas = Capacity Overflow
 - [ ] P vs NP as distinction complexity
+- [ ] **Polynomial-time reductions**: Mapping between problems
 - [ ] DLA dimension → trainability
 - [ ] BQP from quantum [A,B] ≠ 0
 - [ ] Kolmogorov complexity
-- [ ] Connection: Computational power FROM [A,B] structure
+- [ ] **Computational Indistinguishability**: PPT adversary can't distinguish
+- [ ] **Pseudorandomness**: PRG output ≈ truly random
+- [ ] Connection: Computational power FROM [A,B] structure + resource bounds
 
 ---
 
@@ -256,6 +262,74 @@ The proofs are not hand-waved—they are machine-checked.
 - [ ] Connection: Computational social choice
 - **Library:** Could formalize from scratch (no Lean library exists)
 
+#### Phase S: Symmetry & Geometry (The Dual of Distinction) 🔶 PLANNED
+- [ ] **Symmetry as Primary**: The "Void" is perfectly symmetric (indistinguishable)
+- [ ] **Geometry as Distinction**: 
+  - [ ] Circle = symmetric under rotation (indistinguishable points by rotation)
+  - [ ] Cube = symmetric under discrete group (indistinguishable vertices by perm)
+- [ ] **Symmetry Breaking**: Distinction emerges when symmetry is broken
+- [ ] **Insight**: `Symmetry = Infinite Cost to Distinguish`. `Distinction = Finite Cost`.
+- [ ] **Goal**: Models start as Symmetric Groups, and Distinction breaks them down.
+- [ ] **Irrationality as Overflow**: 
+  - [ ] Circle (Infinite Symmetry) vs Grid (Finite Distinction)
+  - [ ] $\pi$, $\sqrt{2}$ are "Capacity Overflow Errors" of fitting Continuous to Discrete
+- [ ] **Imaginary Numbers as Memory**:
+  - [ ] To see the "back" of the sphere, you must rotate (Time).
+  - [ ] $i$ encodes this rotation/memory of the hidden dimension (Capacity Extension).
+  - [ ] Real numbers = 1D View (Overflow); Complex numbers = Full Rotation Capacity.
+- [ ] **Dimension = Capacity**:
+  - [ ] 1D Creature cannot distinguish Up/Down (Overflow).
+  - [ ] Higher Dimension = Greater Capacity to Break Symmetry.
+  - [ ] **Hard Computation (NP)** = Traversing a High-Dim object with Low-Dim steps (Overflow).
+- [ ] **The "Observer Dimension" Conjecture**:
+  - [ ] To fully observe System N, you must stand in Dimension N+1.
+  - [ ] Gödel's Incompleteness is the Logical equivalent of this Geometric fact.
+  - [ ] Gödel's Incompleteness is the Logical equivalent of this Geometric fact.
+  - [ ] "The World" seems probabilistic (QM) because we lack the N+1 view to see the determinism.
+- [ ] **Speculative Limit: Leech Lattice (D=24)**:
+  - [ ] Recursive machine building (N → N+1) might stop at 24.
+  - [ ] Leech Lattice = Optimal Packing / Perfect Symmetry.
+  - [ ] Leech Lattice = Optimal Packing / Perfect Symmetry.
+  - [ ] Leech Lattice = Optimal Packing / Perfect Symmetry.
+  - [ ] Conjecture: The Universe has a "Maximum Distinction Capacity" at D=24.
+  - [ ] **Why it Stops (Search Results)**:
+    - [ ] **Anomalies**: In String Theory, Math *breaks* (probabilities < 0) unless D=10/26.
+    - [ ] **Curse of Dimensionality**: In High D, all points become equidistant. **Distinction becomes impossible**.
+    - [ ] *Conclusion*: The "Stop" is where Cost to Distinguish $\to \infty$.
+- [ ] **The Directions of Dimensionality**:
+  - [ ] **Compactification (Physics)**: High dimensions are "curled up" at the tiny scale. as we get "Bigger" (Macro), we lose access to them (3D Projection).
+  - [ ] **Computation (Logic)**: We build "Bigger" machines to "Zoom In" and recover the lost dimensions.
+  - [ ] **Computation (Logic)**: We build "Bigger" machines to "Zoom In" and recover the lost dimensions.
+  - [ ] *Paradox Resolved*: Biology/Evolution lost dimensions for stability; Intelligence is trying to regain them.
+- [ ] **The "Distinction Loop" (Black Holes)**:
+  - [ ] **Black Hole** = Absolute Indistinguishability (Singularity = 0 Capacity).
+  - [ ] **Light/Particles** = Traveling "Up" the dimensional ladder (Symmetry Breaking).
+  - [ ] **Gravity** = The force pulling back to Indistinguishability (Collapse).
+  - [ ] **Gravity** = The force pulling back to Indistinguishability (Collapse).
+  - [ ] **Gravity** = The force pulling back to Indistinguishability (Collapse).
+  - [ ] *Cycle*: Void $\to$ Big Bang (Break) $\to$ Complexity $\to$ Gravity (Overflow) $\to$ Black Hole (Void).
+  - [ ] **Restart Mechanism** (Penrose CCC):
+    - [ ] Heat Death (Infinite Expansion) = No Mass = No Scale = No Distinction.
+    - [ ] "End of Time" becomes mathematically indistinguishable from "Big Bang".
+    - [ ] The Cycle restarts because Indistinguishability *is* the initial state.
+- [ ] **Observation = Dimensional Scanning**:
+  - [ ] **The "Default" Dimension**: We are capacity-limited observers (3D).
+  - [ ] **Space** = The "Slice" of the higher-dimensional object we see *now*.
+  - [ ] **Time** = The mechanism to "rotate/scan" to see the *other side* (which is hidden by capacity limits).
+  - [ ] **Time** = The mechanism to "rotate/scan" to see the *other side* (which is hidden by capacity limits).
+  - [ ] *Conclusion*: Space-Time is the "Buffer" that prevents the Higher Dimension from overflowing our capacity all at once.
+- [ ] **The "Outside" (Boundary Paradox)**:
+  - [ ] Question: *"Is there nothing outside the universe?"*
+  - [ ] **Answer**: "Outside" is the Void (Indistinguishable).
+  - [ ] **Paradox**: As soon as you "observe" the Outside, you distinguish it, so it becomes "Inside" (Universe Expands).
+  - [ ] **Paradox**: As soon as you "observe" the Outside, you distinguish it, so it becomes "Inside" (Universe Expands).
+  - [ ] *Result*: The Universe is not bounded by a wall, but by our **Capacity to Distinguish**.
+- [ ] **T-Duality (Scale Invariance)**:
+  - [ ] Question: *"Is Void different from High Dimension?"*
+  - [ ] **Answer**: No. Unbroken Symmetry (High Dim) is indistinguishable from Nothing (Void).
+  - [ ] **T-Duality**: Zooming In (High Energy) $\leftrightarrow$ Zooming Out (Large Scale).
+  - [ ] *Insight*: The "Outside" isn't empty space; it's the **Unbroken Symmetry** of the Higher Dimensions we haven't resolved yet.
+
 #### Phase J: Self-Reference = Knowledge Emergence 🔶 PLANNED (Crown Jewel)
 - [ ] Formalize: `SelfReferential` structure (can observe its own distinctions)
 - [ ] Prove: `D observes [D, ¬D] → ∃ new_D, new_D ≠ D`
@@ -267,9 +341,17 @@ The proofs are not hand-waved—they are machine-checked.
 #### Phase K: Sweet Spot Theorem 🔶 PLANNED (Dual of Overflow)
 - [ ] Prove: When distinctions ≤ capacity, system is stable
 - [ ] Formalize Landauer's Principle: `E ≥ kT ln(2)` per distinction
+- [ ] **Conservation Law**: `DisplayCapacity × TimeSteps ≥ TotalVolume` (No free lunch)
+  - [ ] Shifting representations (p-adic, sliding window) trades Space for Time
+  - [ ] Cannot evade overflow, only delay it
 - [ ] P problems = polynomial capacity sufficient
 - [ ] Decidable = finite capacity sufficient
 - [ ] Commuting observables [A,B] = 0 → simultaneous measurement works
+- [ ] **Rough Sets (Pawlak)**: Approximate knowledge from partial distinction
+  - [ ] Indiscernibility relation = equivalence classes
+  - [ ] Lower approximation = definitely distinguishable
+  - [ ] Upper approximation = possibly distinguishable
+  - [ ] Boundary = capacity insufficient to decide
 - **Insight:** Sweet spot uses [≥,<] which REQUIRES distinction (Level 1)
 
 #### Phase L: The Grand Unification 🔶 ULTIMATE GOAL
@@ -292,6 +374,13 @@ theorem all_comparison_needs_distinction :
   (∃ comparison : α → α → Bool) → Distinguishable α
 ```
 
+### 🌉 Beyond Category Theory (The Genesis & Limit)
+Category Theory unifies **Structure** (Analogy between domains).
+We aim to unify **Existence** and **Feasibility**:
+1.  **Genesis (Before Category Theory)**: How objects/arrows emerge from Void (Symmetry Breaking).
+2.  **Limits (After Category Theory)**: When structure collapses due to finite capacity (Overflow).
+*   *Our claim:* We connect the domains that Category Theory treats as "given" by explaining their origin and limits.
+
 ---
 
 ## 📚 Appendix: Connections to Open Problems
@@ -303,7 +392,30 @@ theorem all_comparison_needs_distinction :
 | **P vs NP** | Related via DLA/Capacity | Under investigation |
 | **Yang-Mills** | Non-commutativity connection | Conceptual only |
 | **Riemann** | Primes as atomic distinctions | Very speculative |
-| **Others** | Loose analogies | Not rigorous |
+| **ABC Conjecture** | `rad(n)` = distinction capacity; `c > rad^(1+ε)` = Overflow | Speculative interpretation |
+| **Navier-Stokes** | Singularity = Entropy/Information Overflow | Strong thermodynamic link |
+| **BSD Conjecture** | Rank = Elliptic Curve Information Capacity | Valid information-theoretic view |
+
+### 🧩 Structural vs Limit Problems (Distinction Taxonomy)
+Our framework unifies both types of Millennium verification:
+
+1.  **Limit Problems (Capacity Overflow)**: The "Wall".
+    *   **Fit:** P vs NP, Navier-Stokes, Riemann (Distribution Limit).
+    *   **Mechanism:** System has insufficient capacity to distinguish states.
+
+2.  **Structural Problems (Distinction Consistency)**: The "Bridge".
+    *   **Fit:** Hodge Conjecture, Yang-Mills Mass Gap.
+    *   **Mechanism:** Ensures distinctions in one domain (e.g., Topology) map consistently to another (e.g., Algebra).
+    *   *Insight:* "Hodge classes are algebraic" means "Topological distinctions are realizable by Algebraic distinctions."
+
+### 🧠 Philosophical Note: Symmetry as the Dual of Distinction
+We often ask: *"Is Distinction the most fundamental?"*
+*   **Symmetry** (Indistinguishability) is the starting state of the Void.
+*   **Distinction** is the action of *breaking* that symmetry.
+*   **Geometry** is the study of what remains indistinguishable (Symmetric) under transformation.
+*   *Conclusion:* They are duals. To have a "Thing", you need both:
+    *   **Distinction** to separate it from the background.
+    *   **Symmetry** to give it internal structure (identity).
 
 > These connections are for exploration, not claims of breakthrough.
 
