@@ -87,8 +87,8 @@ theorem abel_ruffini_from_mathlib {α : E} {q : F[X]}
 -/
 theorem galois_capacity_overflow :
     ¬IsSolvable (Equiv.Perm (Fin 5)) := by
-  -- Use the explicit tactic for n >= 5
-  exact @Equiv.Perm.not_solvable 5 le_rfl
+  -- Use the specific theorem for S5
+  exact Equiv.Perm.fin_5_not_solvable
 
 /--
   **THE GALOIS PRINCIPLE**:
@@ -102,14 +102,17 @@ theorem galois_hidden_distinction (K L : Type*) [Field K] [Field L] [Algebra K L
   obtain ⟨σ, hσ⟩ := h
   constructor
   · intro hx
-    -- Use that aeval commutes with AlgEquiv
-    rw [← hσ, ← AlgEquiv.commutes σ p]
-    simp [hx]
+    -- Key: For AlgEquiv σ, we have σ.toAlgHom.comp (aeval x) = aeval (σ x)
+    -- So σ (aeval x p) = (σ.toAlgHom.comp (aeval x)) p = aeval (σ x) p
+    have key : σ (aeval x p) = aeval (σ x) p := by
+      rw [aeval_algHom_apply]
+    rw [← hσ, ← key, hx, map_zero]
   · intro hy
-    rw [← hσ] at hy
-    -- Use that aeval commutes with AlgEquiv
-    rw [← AlgEquiv.commutes σ p] at hy
-    simpa using hy
+    -- Reverse direction: use σ⁻¹
+    have hσ' : σ.symm y = x := by simp [← hσ]
+    have key : σ.symm (aeval y p) = aeval (σ.symm y) p := by
+      rw [aeval_algHom_apply]
+    rw [← hσ', ← key, hy, map_zero]
 
 /-! ## Connection to Meta-Distinction -/
 
@@ -127,12 +130,19 @@ noncomputable def GaloisSymmetryCapacity (K L : Type*) [Field K] [Field L] [Alge
 
   The Galois group is the structure that tracks these "hidden" distinctions.
 -/
-noncomputable def FieldAsMetaDistinction (K L : Type*) [Field K] [Field L] [Algebra K L] :
+noncomputable def FieldAsMetaDistinction (K L : Type*) [Field K] [Field L] [Algebra K L]
+    [FiniteDimensional K L] :
     BoundedMetaDistinction L where
   Allow := fun x y => ¬AlgebraicallyIndistinguishable K L x y
   Cost := fun _ _ => 1
   Capacity := GaloisSymmetryCapacity K L
-  observe := fun _ => 0 -- Still trivial as we haven't defined the canonical form map
-  cap_pos := Fintype.card_pos_iff.mpr ⟨1⟩
+  observe := fun x => ⟨0, by
+    -- GaloisSymmetryCapacity K L > 0 because identity always exists
+    unfold GaloisSymmetryCapacity
+    exact Fintype.card_pos⟩
+  cap_pos := by
+    -- The identity automorphism always exists, so card >= 1
+    unfold GaloisSymmetryCapacity
+    exact Fintype.card_pos
 
 end PhysicalLoF.Foundations

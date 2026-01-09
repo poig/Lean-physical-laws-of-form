@@ -84,7 +84,7 @@ theorem capacity_overflow_implies_nonregular (L : Language α) :
 -/
 theorem regular_implies_finite_capacity (L : Language α) :
     L.IsRegular → (Set.range L.leftQuotient).Finite :=
-  myhill_nerode_mathlib.mp
+  (myhill_nerode_mathlib L).mp
 
 /--
   **THE CAPACITY-REGULARITY EQUIVALENCE**:
@@ -95,6 +95,6 @@ theorem regular_implies_finite_capacity (L : Language α) :
 -/
 theorem capacity_regularity_equivalence (L : Language α) :
     L.IsRegular ↔ (Set.range L.leftQuotient).Finite :=
-  myhill_nerode_mathlib
+  myhill_nerode_mathlib L
 
 end PhysicalLoF.Complexity

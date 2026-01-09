@@ -37,7 +37,9 @@ import PhysicalLoF.Complexity.ComplexityBarrier
 import PhysicalLoF.Complexity.CapacityBridge  -- Bridge to BQP-NP
 import PhysicalLoF.Complexity.Automata        -- Myhill-Nerode
 import PhysicalLoF.Complexity.ChomskyHierarchy -- Distinction capacity hierarchy
-import PhysicalLoF.Logic.Goedel
+-- TEMPORARILY DISABLED: Foundation package conflicts with Mathlib on Matrix.map
+-- See: https://github.com/FormalizedFormalLogic/Foundation/issues
+-- import PhysicalLoF.Logic.Goedel
 import PhysicalLoF.Foundations.Combinatorics  -- Multinomial
 import PhysicalLoF.Foundations.Galois         -- Algebraic Indistinguishability
 
@@ -45,6 +47,6 @@ namespace PhysicalLoF
 
 open Foundations
 open Complexity
-open Logic
+-- open Logic  -- Disabled with Goedel.lean
 
 end PhysicalLoF

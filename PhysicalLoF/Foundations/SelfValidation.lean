@@ -12,7 +12,7 @@
 -/
 
 import PhysicalLoF.Foundations.Distinction
-import Mathlib.Logic.Basic
+import Mathlib.Tactic
 
 namespace PhysicalLoF.Foundations
 
@@ -28,12 +28,10 @@ namespace PhysicalLoF.Foundations
 -/
 theorem refutation_implies_distinction {P : Prop} (h : ¬P) :
     Distinguishable P True := by
-  -- We need to find a property D such that D(P) ≠ D(True)
-  let D := fun (Q : Prop) => Q
-  use D
-  -- We need to prove D(P) ≠ D(True), i.e., P ≠ True
-  -- We know ¬P. If P = True, then ¬True, which is False.
+  -- Distinguishable P True means P ≠ True
+  unfold Distinguishable
   intro h_eq
+  -- If P = True, then ¬P = ¬True = False, contradiction
   rw [h_eq] at h
   exact h trivial
 
@@ -45,8 +43,7 @@ theorem refutation_implies_distinction {P : Prop} (h : ¬P) :
   If Q is true, then we can surely distinguish True from False?
 -/
 theorem performative_consistency :
-    let NoDistinction := ∀ (A B : Prop), ¬Distinguishable A B
-    ¬NoDistinction := by
+    ¬(∀ (A B : Prop), ¬Distinguishable A B) := by
   intro NoDistinction
   -- If there are no distinctions, then True and False are indistinguishable
   have h_tf := NoDistinction True False
