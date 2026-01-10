@@ -124,4 +124,32 @@ theorem steiner_efficiency (x : ℝ) (h_pos : x > 0) :
 -/
 noncomputable def GlobalEfficiencyAtE : ℝ := Efficiency (Real.exp 1)
 
+/-! ## Level 4: Hyper-Simulation (Genesis IV) -/
+
+/--
+  **Genesis IV**: The Fourth Distinction (Hyper-operation).
+  Self-modification.
+
+  Level 0: 0 (Void)
+  Level 1: 0+1 (Addition/Mark) -> Arithmetic
+  Level 2: 0*1 (Multiplication/Re-entry) -> Algebra/Geometry
+  Level 3: 0^1 (Exponentiation/Time) -> Physics
+  Level 4: 0[4]1 (Tetration/Hyper-op) -> Biology/Consciousness?
+
+  The "Hyper-Operator" is the operator that changes the operator.
+  f(n) -> f(n+1) [Successor]
+  Apply(f) -> Apply(Apply) [Recursion]
+  Modify(Apply) -> [Hyper-operation]
+-/
+
+/-
+  **The Ackermann Principle**:
+  Growth becomes non-computable (recursive depth exceeds standard limits)
+  when we move to Level 4.
+  This is where "Life" or "Self-Modifying Code" begins.
+-/
+axiom HyperGenesis : Prop
+-- We leave this as an axiom because formalizing Tetration in standard library is complex.
+-- But we acknowledge its existence in the hierarchy.
+
 end PhysicalLoF.Foundations

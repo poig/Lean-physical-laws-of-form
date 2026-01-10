@@ -18,7 +18,8 @@ import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Base
 import Mathlib.Data.Real.Basic
-import Mathlib.Data.Complex.Exponential
+import Mathlib.Analysis.Complex.Exponential
+import Mathlib.Analysis.Real.Pi.Bounds
 
 namespace PhysicalLoF.Foundations
 
@@ -68,10 +69,23 @@ noncomputable def Efficiency (d : ℝ) : ℝ :=
 theorem efficiency_decay {d1 d2 : ℝ} (h_pos : d1 > 0) (h_large : d2 > d1) :
   Efficiency d2 < Efficiency d1 := by
   unfold Efficiency
-  have h_tau_pos : 2 * Real.pi > 1 := by
-    have pi_gt_1 : Real.pi > 1 := Real.pi_gt_three |>.trans_le (by norm_num) -- pi > 3 > 1
-    linarith
-  have h_log_pos : Real.logb 2 (2 * Real.pi) > 0 := Real.logb_pos (by norm_num) h_tau_pos
-  apply div_lt_div_of_lt_left h_log_pos h_pos h_large
+  have pi_pos : Real.pi > 0 := Real.pi_pos
+  have two_pi_pos : 2 * Real.pi > 0 := by linarith
+  have h_log_pos : Real.logb 2 (2 * Real.pi) > 0 := by
+    apply Real.logb_pos
+    · norm_num
+    · have pi_gt_1 : Real.pi > 1 := by
+        have h : Real.pi > 3 := Real.pi_gt_three
+        linarith
+      linarith
+  -- Use basic field theory
+  -- Goal: C / d2 < C / d1 given C > 0, d1 > 0, d2 > d1.
+  -- We use div_lt_div_of_lt_left which requires: 0 < c, 0 < b, b < a -> c / a < c / b
+  rw [div_eq_mul_inv, div_eq_mul_inv]
+  apply mul_lt_mul_of_pos_left
+  · have h_d2_pos : 0 < d2 := lt_trans h_pos h_large
+    rw [inv_lt_inv₀ h_d2_pos h_pos]
+    exact h_large
+  · exact h_log_pos
 
 end PhysicalLoF.Foundations
