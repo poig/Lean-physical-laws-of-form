@@ -19,7 +19,7 @@
 import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Nat.Prime.Defs
 import Mathlib.Data.Nat.Factors
-import PhysicalLoF.Foundations.Distinction
+import Mathlib.Data.Fintype.Card
 
 namespace PhysicalLoF.Foundations
 
@@ -236,5 +236,29 @@ theorem prime_composite_distinction (n : ℕ) (hn : n > 1) :
     · -- Multiplication is commutative
       rw [Nat.mul_comm]
       exact (Nat.div_mul_cancel hdiv).symm
+
+
+/-! ## Representation Theory of Number -/
+
+/--
+  **NUMBER IS REPRESENTATION**:
+
+  The user asks: "Why 0, 1, 2? These are human definitions."
+  We answer: Yes. "Dimension" is simply the Cardinality of the Representation.
+
+  - The "Void" has Representation 0.
+  - The "Point" has Representation 1.
+  - The "Line" has Representation 2 (endpoints).
+  - The "Cycle" has Representation N.
+-/
+abbrev Representation (n : ℕ) : Type := Fin n
+
+/--
+  **DIMENSION IS OBSERVATION**:
+  The "Dimension" of a structure is not intrinsic, but depends on
+  the resolution of the observation (Representation).
+-/
+theorem dimension_is_observation (n : ℕ) :
+  Fintype.card (Representation n) = n := Fintype.card_fin n
 
 end PhysicalLoF.Foundations

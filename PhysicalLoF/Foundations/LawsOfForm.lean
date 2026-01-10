@@ -20,6 +20,7 @@
 -/
 
 import PhysicalLoF.Foundations.Distinction
+import Mathlib.Data.Fintype.Basic
 
 namespace PhysicalLoF.Foundations
 
@@ -175,42 +176,72 @@ theorem distinction_underlies_limits :
 inductive Form : Type where
   | void : Form           -- The unmarked state (∅)
   | mark : Form → Form    -- The distinction operator ◯
-  deriving DecidableEq, Repr
+  | compose : Form → Form → Form -- Juxtaposition (p p)
+  deriving DecidableEq
 
 namespace Form
 
 /--
+  Equivalence Relation for the Primary Algebra
+  This defines the algebraic space where J1 and J2 operate.
+-/
+inductive Equiv : Form → Form → Prop where
+  | refl (p : Form) : Equiv p p
+  | symm {p q : Form} : Equiv p q → Equiv q p
+  | trans {p q r : Form} : Equiv p q → Equiv q r → Equiv p r
+  | cong_mark {p q : Form} : Equiv p q → Equiv (mark p) (mark q)
+  | cong_comp_l {p q r : Form} : Equiv p q → Equiv (compose p r) (compose q r)
+  | cong_comp_r {p q r : Form} : Equiv p q → Equiv (compose r p) (compose r q)
+
+  -- INITIALS:
+  /-- **J1 (Crossing)**: `((p)) = p` -/
+  | j1 (p : Form) : Equiv (mark (mark p)) p
+  /-- **J2 (Calling)**: `p p = p` -/
+  | j2 (p : Form) : Equiv (compose p p) p
+
+  -- Structural Axioms
+  | comp_void_l (p : Form) : Equiv (compose void p) p
+  | comp_void_r (p : Form) : Equiv (compose p void) p
+  | comp_assoc (p q r : Form) : Equiv (compose (compose p q) r) (compose p (compose q r))
+  | comp_comm (p q : Form) : Equiv (compose p q) (compose q p)
+
+infix:50 " ≈ " => Equiv
+
+/--
   Evaluation of a Form to Bool.
-  This shows Boolean algebra is a MODEL of the Primary Algebra.
+  Juxtaposition corresponds to logical OR.
 -/
 def eval : Form → Bool
   | void => false
   | mark f => !eval f
+  | compose f g => eval f || eval g
 
-/-- Axiom J1: Calling (Position) - ◯ ◯ = ◯
-    In Laws of Form, adjacency (juxtaposition) corresponds to logical OR.
-    Calling means repeating a form next to itself DOES NOT change the value.
-    (x x = x)
--/
-theorem calling_law (f : Form) : (eval f || eval f) = eval f := by
-  simp [Bool.or_self]
-
-/-- Axiom J2: Crossing (Transposition) - Double crossing cancels -/
+/-- Axiom J1: Crossing (Transposition) - Double crossing cancels -/
 theorem crossing_law (f : Form) : eval (mark (mark f)) = eval f := by
   simp [eval, Bool.not_not]
 
-/-- The void evaluates to false (unmarked) -/
+/-- Axiom J2: Calling (Position) - p p = p -/
+theorem calling_law (f : Form) : eval (compose f f) = eval f := by
+  simp [eval, Bool.or_self]
+
+/-- The void (unmarked) evaluates to false -/
 theorem void_is_false : eval void = false := rfl
 
-/-- A single mark evaluates to true (marked) -/
-theorem mark_void_is_true : eval (mark void) = true := rfl
-
-/-- Boolean algebra is a valid model of the Primary Algebra -/
-theorem boolean_is_model :
-    -- The two-valued interpretation satisfies both axioms
-    (∀ f, (eval f || eval f) = eval f) ∧    -- Calling (Juxtaposition)
-    (∀ f, eval (mark (mark f)) = eval f) := -- Crossing (Nesting)
-  ⟨calling_law, crossing_law⟩
+/-- Boolean algebra is a valid model of the Primary Algebra equivalence -/
+theorem boolean_is_model {p q : Form} (h : p ≈ q) : eval p = eval q := by
+  induction h with
+  | refl => rfl
+  | symm _ ih => exact ih.symm
+  | trans _ _ ih1 ih2 => exact ih1.trans ih2
+  | cong_mark _ ih => simp [eval, ih]
+  | cong_comp_l _ ih => simp [eval, ih]
+  | cong_comp_r _ ih => simp [eval, ih]
+  | j1 => simp [eval, Bool.not_not]
+  | j2 => simp [eval, Bool.or_self]
+  | comp_void_l => simp [eval]
+  | comp_void_r => simp [eval]
+  | comp_assoc => simp [eval, Bool.or_assoc]
+  | comp_comm => simp [eval, Bool.or_comm]
 
 end Form
 

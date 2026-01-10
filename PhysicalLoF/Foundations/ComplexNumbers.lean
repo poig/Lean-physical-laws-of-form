@@ -1,6 +1,6 @@
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.Analysis.SpecialFunctions.Pow.Complex
-import Mathlib.Data.Complex.Exponential
+import Mathlib.Analysis.Complex.Exponential
 
 namespace PhysicalLoF.Foundations
 
@@ -28,16 +28,19 @@ theorem imaginary_pow_imaginary_is_real :
   -- i = e^(i * pi/2)
   -- log(i) = i * pi/2
   have h_log_I : log I = I * (Real.pi / 2) := by
-    rw [log_im_I_add_one_sub_one_div_two_add_one] -- This might be the wrong lemma
     -- Let's stick to basic definitions
-    rw [Complex.log, abs_I, arg_I]
+    rw [Complex.log]
     simp
 
   -- i * log(i) = i * (i * pi/2) = -pi/2
   rw [h_log_I]
   push_cast
-  rw [mul_assoc, I_mul_I]
-  simp only [mul_neg, mul_one, neg_mul]
+  rw [h_log_I]
+  push_cast
+  trans ((I * I) * (Real.pi / 2))
+  · ring
+  rw [I_mul_I]
+  simp only [mul_neg, one_mul]
 
   -- exp(-pi/2) is real
   rw [exp_eq_exp_re_mul_cos_add_sin]
@@ -50,9 +53,10 @@ theorem imaginary_pow_imaginary_value :
     Complex.I ^ Complex.I = (Real.exp (-Real.pi / 2) : ℂ) := by
   rw [cpow_def]
   have h_log_I : log I = I * (Real.pi / 2) := by
-    rw [Complex.log, abs_I, arg_I]
+    rw [Complex.log]
     simp
   rw [h_log_I]
-  ring_nf
+  trans (cexp ((I * I) * (Real.pi / 2)))
+  · congr; ring
   rw [I_mul_I]
   simp

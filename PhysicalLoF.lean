@@ -31,6 +31,7 @@ import PhysicalLoF.Foundations.SelfValidation     -- Self-validation
 import PhysicalLoF.Foundations.CategoryTheory    -- Initial object
 import PhysicalLoF.Foundations.Arithmetic        -- Peano axioms
 import PhysicalLoF.Foundations.RelatedTheories   -- Quasi-Set, HoTT, etc.
+import PhysicalLoF.Foundations.VolumeOfVoid      -- The Volume of Zero is One
 
 import PhysicalLoF.ImpossibilityTheorems
 import PhysicalLoF.Complexity.ComplexityBarrier
@@ -42,11 +43,13 @@ import PhysicalLoF.Complexity.ChomskyHierarchy -- Distinction capacity hierarchy
 -- import PhysicalLoF.Logic.Goedel
 import PhysicalLoF.Foundations.Combinatorics  -- Multinomial
 import PhysicalLoF.Foundations.Galois         -- Algebraic Indistinguishability
+import PhysicalLoF.Cybernetica                -- The Grand Conjecture
 
 namespace PhysicalLoF
 
 open Foundations
 open Complexity
+open Cybernetica
 -- open Logic  -- Disabled with Goedel.lean
 
 end PhysicalLoF
