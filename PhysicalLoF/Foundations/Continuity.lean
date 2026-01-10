@@ -37,9 +37,10 @@ def IsStable (f : RecForm) : Prop :=
   If a RecForm is stable, its Limit is the Form it settles into.
   (Note: In a Constructive Logic, we might need the Witness N).
 -/
-def Limit (f : RecForm) (h : IsStable f) : Form :=
-  match h with
-  | ⟨N, _⟩ => f N
+noncomputable def Limit (f : RecForm) (h : IsStable f) : Form :=
+  -- Use Classical Choice to extract the witness N
+  let N := Classical.choose h
+  f N
 
 /-! ## 2. The Universal Generators (Newton & Taylor as Forms) -/
 
@@ -124,7 +125,7 @@ def ZoomAround (Current : Form) : Form :=
 theorem stability_requires_j1 (f : Form) :
   ZoomIn f ≈ mark f := by
   unfold ZoomIn
-  exact Equiv.refl _
+  apply Form.Equiv.refl
 
 /--
   **Theorem: Growth requires Accumulation (J2)**.
@@ -134,7 +135,7 @@ theorem stability_requires_j1 (f : Form) :
 theorem growth_requires_j2 (f : Form) :
   ZoomOut f ≈ compose f f := by
   unfold ZoomOut
-  exact Equiv.refl _
+  apply Form.Equiv.refl
 
 /--
   **Theorem: Transcendence is the Limit of Method**.

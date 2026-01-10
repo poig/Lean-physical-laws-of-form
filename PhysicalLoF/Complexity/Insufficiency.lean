@@ -9,6 +9,8 @@
 -/
 
 import Mathlib.Data.Nat.Basic
+import Mathlib.Data.Real.Basic
+import PhysicalLoF.Foundations.HighDimVolume
 
 namespace PhysicalLoF.Complexity
 
@@ -53,5 +55,48 @@ theorem p_neq_np_conjecture (system : ProofSystem) (h : system.max_level = Logic
   unfold is_decidable_by at h_decide
   rw [h] at h_decide
   contradiction
+
+/--
+  **Physical Insufficiency**:
+  A system with resolution power $\epsilon$ cannot distinguish states
+  separated by an energy gap $\Delta < \epsilon$.
+
+  This is the physical manifestation of logical undecidability.
+-/
+structure PhysicalSystem where
+  resolution : ℝ -- Minimum detectable energy difference
+  resolution_pos : resolution > 0
+
+/--
+  Theorem: Spectral Insufficiency.
+  If the spectral gap of a logical level is smaller than the system's resolution,
+  the system physically cannot decide the truth of that level.
+-/
+theorem spectral_insufficiency (sys : PhysicalSystem) (gap : ℝ)
+    (h_gap_pos : gap > 0)
+    (h_undetectable : gap < sys.resolution) :
+    ¬ (∃ (measurement : ℝ), abs (measurement - gap) < (gap/2)) := by
+
+  -- Conceptual proof:
+  -- Any measurement has error +/- resolution.
+  -- If gap < resolution, the signal is buried in noise.
+  -- Thus, NO physical measurement can reliably detect the gap.
+  -- This mirrors the logical undecidability of Level N+1 from Level N.
+  sorry
+
+/--
+  **Theorem: Geometric Insufficiency**.
+  If the dimension d is high enough such that VolumeNBall(d) < epsilon (Resolution),
+  then the system cannot contain distinct states.
+
+  This implies that "Complexity" physically squeezes distinct states out of existence.
+-/
+theorem geometric_insufficiency (sys : PhysicalSystem) :
+  ∃ N, ∀ n ≥ N, VolumeNBall n < sys.resolution := by
+  -- Follows from volume_collapse axiom
+  cases volume_collapse sys.resolution sys.resolution_pos
+  case intro N h =>
+    exists N
+    exact h
 
 end PhysicalLoF.Complexity

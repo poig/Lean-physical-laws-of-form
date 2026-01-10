@@ -205,6 +205,10 @@ inductive Equiv : Form → Form → Prop where
   | comp_assoc (p q r : Form) : Equiv (compose (compose p q) r) (compose p (compose q r))
   | comp_comm (p q : Form) : Equiv (compose p q) (compose q p)
 
+attribute [refl] Equiv.refl
+attribute [symm] Equiv.symm
+attribute [trans] Equiv.trans
+
 infix:50 " ≈ " => Equiv
 
 /--

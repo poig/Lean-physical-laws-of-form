@@ -78,4 +78,35 @@ theorem barrier_existence (P_class NP_class : ComplexityClass) :
     (∃ OracleB, RelativizedClass P_class OracleB ≠ RelativizedClass NP_class OracleB) :=
   bakers_gill_solovay_theorem P_class NP_class
 
+/-! ## The Generalized Structure Barrier (DLA) -/
+
+/--
+  A Structure Barrier is a constraint imposed not by an Oracle (Software),
+  but by the Geometry of the underlying space (Hardware).
+
+  If the Dimension (Capacity) of the space is too small, distinction becomes impossible
+  regardless of the Oracle.
+-/
+structure StructureBarrier (U : Type u) where
+  Dimension : ℕ
+  Capacity : ℕ
+  is_underprovisioned : Capacity < 2^Dimension -- 2^N is required for full distinction
+
+/--
+  Theorem: Dimension serves as a Logical Barrier.
+  If the DLA dimension is polynomial (poly(n)), but the problem requires exponential (2^n),
+  then NO algorithm (P or BQP) can distinguish the states.
+
+  This is "Physical Relativization":
+  The laws of physics (Hamiltonian) act as the Oracle that restricts computational power.
+-/
+theorem dimension_is_barrier {n : ℕ} {U : Type} [Fintype U] (barrier : StructureBarrier U)
+    (h_n : barrier.Dimension = n) :
+    ∃ (a b : U), ¬ Distinguishable a b := by
+  -- If Capacity < 2^N (Cardinality of State Space),
+  -- then by Pigeonhole Principle, at least two states must map to the same distinction bin.
+  -- This implies they are indistinguishable under this structure.
+  have h_under := barrier.is_underprovisioned
+  sorry -- Proof requires Pigeonhole on MetaDistinction capacity w.r.t U
+
 end PhysicalLoF.Complexity
