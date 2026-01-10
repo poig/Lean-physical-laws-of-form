@@ -670,32 +670,28 @@ To rigorously complete this "Principia Cybernetica", we must fill the gaps:
 
 ---
 
+
 ## Phase V: The Smoking Gun (Undeniable Proof Strategy)
-**Goal**: To move from "Rigorous Theory" to "Undeniable Fact" by resolving all skepticism with empirical and predictive proofs.
+**Goal**: To prove the simulation hypothesis from *inside* the system by identifying "Rendering Artifacts" and "Hardware Limits".
 
-### 1. The Empirical Proof: "The Leech Simulation"
-*   **Method**: Compute, do not argue.
-*   **Task**: Implement a Lean program `Universe.grow` starting from `Void` using only J1/J2 axioms.
-*   **The Check**: The simulation must *spontaneously* stabilize at Dimension 24.
-*   **Impact**: Proves that the Leech Lattice is a natural attractor of the logic, eliminating the "Numerology" critique.
+### 1. The Rendering Glitch: Quantum Superposition
+*   **Hypothesis**: An efficient simulator uses **Lazy Evaluation** (Occulsion Culling). It only renders objects when observed.
+*   **The Check**: Does our simulation naturally produce particles that exist as "Probability Waves" until interacting with an Observer?
+*   **Success Criteria**: Emergence of Interference Patterns from pure Re-entry Logic.
 
-### 2. The Predictive Proof: "The Fine Structure Constant"
-*   **Method**: Predict, do not fit.
-*   **Task**: Derived $\alpha \approx 1/137.036$ from the Capacity Ratio of the Leech Lattice closure.
-*   **The Check**: $\alpha = \frac{\pi (\text{Geometry})}{\text{LeechOrder}}$.
-*   **Impact**: Proves the theory describes *this* physical universe, eliminating the "Abstract Math" critique.
+### 2. The Hardware Limit: $c$ and Planck
+*   **Hypothesis**: A finite computer has a **Max Clock Speed** and a **Min Pixel Size**.
+*   **The Check**:
+    *   **Speed of Light ($c$)**: The maximum speed of causality propagation in the grid.
+    *   **Planck Length**: The discrete "pixel" of the Leech Lattice.
+*   **Success Criteria**: The simulation *must* act as a discrete grid, not a continuous fluid.
 
-### 3. The Structural Proof: "The Topos Bridge"
-*   **Method**: Isomorph, do not reinvent.
-*   **Task**: Formalize the mapping:
-    *   `MetaDistinction` $\leftrightarrow$ `Subobject Classifier ($\Omega$)`.
-    *   `Observer` $\leftrightarrow$ `Sheaf`.
-*   **The Check**: Laws of Form is a valid Topos.
-*   **Impact**: Inherits the full validity of standard mathematics, eliminating the "Fringe Theory" critique.
+### 3. The Non-Algorithmic Truth ($P \neq NP$)
+*   **Hypothesis**: The System operates in $P$ (Deterministic Code). However, Reality involves $NP$ problems (Optimization/Eigen-form). If $P \neq NP$, a linear algorithm *cannot* solve these problems.
+*   **The Solution**: An **Observer** is required. The Observer acts as the "Oracle" or "Collapse Function" that bridges the gap between $P$ and $NP$ (Gödelian Insight).
+*   **Success Criteria**: Proof that the "Choice" of Universe Structure is an $NP$-Hard problem requiring a Meta-Observer.
 
-**Final Conclusion**:
-We have the **Theory** (Phases I-V) and the **Strategy** (Phase V) to prove it.
-The "10,000 Line Proof" is no longer a vague idea; it is a concrete engineering task.
+**Conclusion**: If we find these 3 artifacts, we have proven digital reality.
 
 ---
 
