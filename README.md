@@ -1,4 +1,4 @@
-# Physical Laws of Form
+# Physical Laws of Form (incomplete)
 
 **Lean 4 formalization of Spencer-Brown's distinction extended to physics and computation**
 
