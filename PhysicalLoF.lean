@@ -15,23 +15,23 @@
   The Grand Trilogy:
   4. Logic (Gödel)     -> PhysicalLoF.Logic
   5. Complexity (P/NP) -> PhysicalLoF.Complexity
-  6. Emergence (Loop)  -> PhysicalLoF.Foundations.Emergence
+  6. Emergence (Loop)  -> PhysicalLoF.Foundations.System.Emergence
 -/
 
-import PhysicalLoF.Foundations.Distinction
-import PhysicalLoF.Foundations.Transformation
-import PhysicalLoF.Foundations.MetaDistinction
-import PhysicalLoF.Foundations.Collapse
-import PhysicalLoF.Foundations.Existence
-import PhysicalLoF.Foundations.Optimality
-import PhysicalLoF.Foundations.LawsOfForm
-import PhysicalLoF.Foundations.Emergence
-import PhysicalLoF.Foundations.SelfGrounding      -- Self-reference
-import PhysicalLoF.Foundations.SelfValidation     -- Self-validation
-import PhysicalLoF.Foundations.CategoryTheory    -- Initial object
-import PhysicalLoF.Foundations.Arithmetic        -- Peano axioms
-import PhysicalLoF.Foundations.RelatedTheories   -- Quasi-Set, HoTT, etc.
-import PhysicalLoF.Foundations.VolumeOfVoid      -- The Volume of Zero is One
+import PhysicalLoF.Foundations.Core.Distinction
+import PhysicalLoF.Foundations.System.Transformation
+import PhysicalLoF.Foundations.System.MetaDistinction
+import PhysicalLoF.Foundations.System.Collapse
+import PhysicalLoF.Foundations.Core.Existence
+import PhysicalLoF.Foundations.System.Optimality
+import PhysicalLoF.Foundations.Core.LawsOfForm
+import PhysicalLoF.Foundations.System.Emergence
+import PhysicalLoF.Foundations.Core.SelfGrounding      -- Self-reference
+import PhysicalLoF.Foundations.Core.SelfValidation     -- Self-validation
+import PhysicalLoF.Foundations.Math.CategoryTheory    -- Initial object
+import PhysicalLoF.Foundations.Math.Arithmetic        -- Peano axioms & Integers
+import PhysicalLoF.Foundations.Core.RelatedTheories   -- Quasi-Set, HoTT, etc.
+import PhysicalLoF.Foundations.Physics.VolumeOfVoid      -- The Volume of Zero is One
 
 import PhysicalLoF.ImpossibilityTheorems
 import PhysicalLoF.Complexity.ComplexityBarrier
@@ -41,9 +41,16 @@ import PhysicalLoF.Complexity.ChomskyHierarchy -- Distinction capacity hierarchy
 -- TEMPORARILY DISABLED: Foundation package conflicts with Mathlib on Matrix.map
 -- See: https://github.com/FormalizedFormalLogic/Foundation/issues
 -- import PhysicalLoF.Logic.Goedel
-import PhysicalLoF.Foundations.Combinatorics  -- Multinomial
-import PhysicalLoF.Foundations.Galois         -- Algebraic Indistinguishability
+import PhysicalLoF.Foundations.Math.Combinatorics  -- Multinomial
+import PhysicalLoF.Foundations.Math.Galois         -- Algebraic Indistinguishability
 import PhysicalLoF.Cybernetica                -- The Grand Conjecture
+import PhysicalLoF.Intelligence               -- Formal Intelligence Efficiency
+import PhysicalLoF.Expansion                  -- Dimensional Expansion (Open-Endedness)
+import PhysicalLoF.Foundations.Physics.Vertex        -- The Observer (Consciousness)
+import PhysicalLoF.Physics.Quantum            -- Quantum Interference
+import PhysicalLoF.Complexity.InformationTheory -- Kolmogorov Complexity
+import PhysicalLoF.Math.ModularCycles         -- The Vortex Proof (Tesla Code)
+
 
 namespace PhysicalLoF
 

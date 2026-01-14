@@ -15,7 +15,7 @@
   Therefore, NP-hard → Exponential DLA → Capacity Overflow.
 -/
 
-import PhysicalLoF.Foundations.MetaDistinction
+import PhysicalLoF.Foundations.System.MetaDistinction
 import BQP_NP.Basic.LieAlgebra
 import Mathlib.Tactic
 

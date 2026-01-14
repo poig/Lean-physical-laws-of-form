@@ -9,10 +9,10 @@
   "The Limit of Mathematical Formalism is the Limit of Cybernetic Self-Observation."
 -/
 
-import PhysicalLoF.Foundations.Vertex
+import PhysicalLoF.Foundations.Physics.Vertex
 import PhysicalLoF.Complexity.Insufficiency
-import PhysicalLoF.Foundations.Leech
-import PhysicalLoF.Foundations.Continuity
+import PhysicalLoF.Foundations.Physics.Leech
+import PhysicalLoF.Foundations.System.Continuity
 
 namespace PhysicalLoF.Cybernetica
 

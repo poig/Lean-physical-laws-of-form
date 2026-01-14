@@ -18,9 +18,9 @@ require Foundation from git
 
 -- BQP-NP for complexity theory (DLA, Hamiltonians, NP-hardness)
 -- Local dependency - bridges Distinction theory with Complexity theory
--- require BQP_NP from "../Lean-BQP-NP"
-require BQP_NP from git
-  "https://github.com/poig/Lean-BQP-NP" @ "main"
+require BQP_NP from "../Lean-BQP-NP"
+-- require BQP_NP from git
+--   "https://github.com/poig/Lean-BQP-NP" @ "main"
 
 lean_lib «PhysicalLoF» where
   -- add library configuration options here
@@ -28,3 +28,8 @@ lean_lib «PhysicalLoF» where
 @[default_target]
 lean_exe «physical-laws-of-form» where
   root := `Main
+
+-- Buildable core target focused on AI-facing theory.
+-- Usage: `lake build physical-laws-of-form-ai`
+lean_exe «physical-laws-of-form-ai» where
+  root := `AIMain

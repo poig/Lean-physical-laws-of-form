@@ -13,7 +13,7 @@
   There exist distinctions [True, False] for G that T cannot observe.
 -/
 
-import PhysicalLoF.Foundations.MetaDistinction
+import PhysicalLoF.Foundations.System.MetaDistinction
 import Foundation.FirstOrder.Incompleteness.First
 
 namespace PhysicalLoF.Logic

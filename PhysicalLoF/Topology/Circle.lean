@@ -16,7 +16,7 @@
   - Pi: The Capacity Overflow of the Circle relative to the Line.
 -/
 
-import PhysicalLoF.Foundations.Structure
+import PhysicalLoF.Foundations.Physics.Structure
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Data.Real.Irrational
 import Mathlib.Data.Nat.Basic

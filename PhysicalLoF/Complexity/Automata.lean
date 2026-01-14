@@ -21,8 +21,8 @@
 -/
 
 import Mathlib.Computability.MyhillNerode
-import PhysicalLoF.Foundations.MetaDistinction
-import PhysicalLoF.Foundations.Distinction
+import PhysicalLoF.Foundations.System.MetaDistinction
+import PhysicalLoF.Foundations.Core.Distinction
 
 namespace PhysicalLoF.Complexity
 

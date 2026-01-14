@@ -16,7 +16,7 @@
   3. Divergence: The transition to Chaos (Logic Level 4).
 -/
 
-import PhysicalLoF.Foundations.HighDimVolume
+import PhysicalLoF.Foundations.Physics.HighDimVolume
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 

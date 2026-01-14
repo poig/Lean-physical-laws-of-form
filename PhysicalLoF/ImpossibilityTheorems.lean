@@ -17,8 +17,8 @@
   NOT calculus limits (lim x→a f(x)).
 -/
 
-import PhysicalLoF.Foundations.Distinction
-import PhysicalLoF.Foundations.Collapse
+import PhysicalLoF.Foundations.Core.Distinction
+import PhysicalLoF.Foundations.System.Collapse
 
 namespace PhysicalLoF.ImpossibilityTheorems
 
