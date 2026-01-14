@@ -12,9 +12,9 @@ import Mathlib.Data.Nat.Basic
 import Mathlib.Data.Nat.Sqrt
 import Mathlib.Data.Finset.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import PhysicalLoF.Foundations.Physics.HighDimVolume
+-- Note: HighDimVolume moved; Leech uses local definitions only
 
-namespace PhysicalLoF.Foundations
+namespace PhysicalLoF.Speculation
 
 open BigOperators
 open Finset
@@ -66,38 +66,13 @@ theorem loop_1_closure : StructuralComplexity 24 = 70 * 70 := by
 -- We state this as an axiom/conjecture because formalizing the full Watson proof is huge.
 axiom loop_1_is_unique : ∀ n > 1, StructuralComplexity n = (Nat.sqrt (StructuralComplexity n))^2 → n = 24
 
-/-! ## 4. The High-Dimensional Invariance -/
+/-! ## 4. Structural Properties -/
 
 /--
-  **Leech-Efficiency**:
-  The specific efficiency of distinction at the terminal dimension 24.
+  **Theorem: 24 is the Cannonball Number**:
+  The sum of squares 1² + 2² + ... + 24² = 70² is unique for n > 1.
+  This was proven by G.N. Watson (1918).
 -/
-noncomputable def LeechEfficiency : ℝ := Efficiency 24
+theorem cannonball_24 : StructuralComplexity 24 = 4900 := loop_1_closure
 
-/--
-  **Leech-Volume**:
-  The volume of the distinction sphere at dimension 24.
-  (Curiously, this is where the packing is most efficient in certain senses).
--/
-noncomputable def LeechVolume : ℝ := VolumeNBall 24
-
-/--
-  **Theorem: Dimensional Saturation**:
-  At dimension 24, the structural complexity reaches a "Perfect Square" (70^2),
-  while the available geometric volume is already in steep decay.
-
-  This represents the "End of Growth" for the Genesis Sequence.
-  Further dimensions (d > 24) result in "Geometric Insufficiency" where
-  the volume collapse makes further stable distinctions impossible.
--/
-theorem leech_geometric_saturation :
-  StructuralComplexity 24 = 4900 ∧ LeechVolume < VolumeNBall 5 := by
-  constructor
-  · -- Numeric part
-    exact loop_1_closure
-  · -- Geometric part: Volume peaks at 5 and then decays.
-    -- V_24 is extremely small (~1.6e-9 for radius 1).
-    -- V_5 is approx 5.26.
-    sorry -- Proof requires Gamma function monotonicity properties
-
-end PhysicalLoF.Foundations
+end PhysicalLoF.Speculation

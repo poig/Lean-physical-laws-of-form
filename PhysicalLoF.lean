@@ -46,7 +46,7 @@ import PhysicalLoF.Foundations.Math.Galois         -- Algebraic Indistinguishabi
 import PhysicalLoF.Cybernetica                -- The Grand Conjecture
 import PhysicalLoF.Intelligence               -- Formal Intelligence Efficiency
 import PhysicalLoF.Expansion                  -- Dimensional Expansion (Open-Endedness)
-import PhysicalLoF.Foundations.Physics.Vertex        -- The Observer (Consciousness)
+import PhysicalLoF.Speculation.Vertex            -- SPECULATIVE: The Observer (Consciousness)
 import PhysicalLoF.Physics.Quantum            -- Quantum Interference
 import PhysicalLoF.Complexity.InformationTheory -- Kolmogorov Complexity
 import PhysicalLoF.Math.ModularCycles         -- The Vortex Proof (Tesla Code)

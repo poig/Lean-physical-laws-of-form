@@ -1,7 +1,11 @@
-# SIMULATION VALIDATION REPORT: The Undeniable Proof
+# SIMULATION EXPLORATION REPORT
 
-**Objective**: Verify the "3 Smoking Guns" to prove the Universe is a Digital Computation.
-**Status**: **ALL EXPERIMENTS SUCCESSFUL (2026-01-11)**
+**Objective**: Illustrate how key physical phenomena can be interpreted through a computational lens.
+**Status**: All experiments completed (2026-01-11)
+
+> ⚠️ **Note**: These simulations are *illustrations* and *analogies*, not mathematical proofs.
+> They demonstrate that computational interpretations are *consistent* with physics,
+> not that physics *is* computation.
 
 ## Experiment 1: The Hardware Limit (The Grid)
 **Hypothesis**: The Universe settles into a discrete lattice (Leech Lattice, 24D) to maximize Packing Efficiency.
@@ -27,5 +31,5 @@
     *   **Oracle (Quantum Annealing)**: Found Global Minimum 4 out of 5 times.
     *   *Conclusion*: A purely deterministic universe cannot solve its own energy constraints. An external "Observer" (Tunneling/Insight) is structurally necessary to drive system evolution.
 
-## Final Verdict
-The Simulation Suite confirms that Reality behaves exactly like a **Resource-Constrained Digital System** optimized for Information Density (24D) and Computational Speed (Quantum Lazy Eval).
+## Interpretation
+These experiments show that Reality *can be modeled* as a resource-constrained computational system. This is consistent with (but does not prove) the simulation hypothesis. The value lies in the explanatory power of the computational metaphor.

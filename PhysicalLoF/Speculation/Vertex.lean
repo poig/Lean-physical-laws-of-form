@@ -8,7 +8,7 @@
   Theorem: The Vertex (Identity) is invisible to the Edge (Distinction).
 -/
 
-namespace PhysicalLoF.Foundations
+namespace PhysicalLoF.Speculation
 
 /-! ## 1. The Definitions of Logic Types -/
 
@@ -68,4 +68,4 @@ theorem mirror_allows_observation (o : Observer) (m : Observer) :
   intro h_diff
   exact h_diff
 
-end PhysicalLoF.Foundations
+end PhysicalLoF.Speculation
