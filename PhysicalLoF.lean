@@ -33,30 +33,9 @@ import PhysicalLoF.Foundations.Math.Arithmetic        -- Peano axioms & Integers
 import PhysicalLoF.Foundations.Core.RelatedTheories   -- Quasi-Set, HoTT, etc.
 import PhysicalLoF.Foundations.Physics.VolumeOfVoid      -- The Volume of Zero is One
 
-import PhysicalLoF.ImpossibilityTheorems
-import PhysicalLoF.Complexity.ComplexityBarrier
-import PhysicalLoF.Complexity.CapacityBridge  -- Bridge to BQP-NP
-import PhysicalLoF.Complexity.Automata        -- Myhill-Nerode
-import PhysicalLoF.Complexity.ChomskyHierarchy -- Distinction capacity hierarchy
--- TEMPORARILY DISABLED: Foundation package conflicts with Mathlib on Matrix.map
--- See: https://github.com/FormalizedFormalLogic/Foundation/issues
--- import PhysicalLoF.Logic.Goedel
-import PhysicalLoF.Foundations.Math.Combinatorics  -- Multinomial
-import PhysicalLoF.Foundations.Math.Galois         -- Algebraic Indistinguishability
-import PhysicalLoF.Cybernetica                -- The Grand Conjecture
-import PhysicalLoF.Intelligence               -- Formal Intelligence Efficiency
-import PhysicalLoF.Expansion                  -- Dimensional Expansion (Open-Endedness)
-import PhysicalLoF.Speculation.Vertex            -- SPECULATIVE: The Observer (Consciousness)
-import PhysicalLoF.Physics.Quantum            -- Quantum Interference
-import PhysicalLoF.Complexity.InformationTheory -- Kolmogorov Complexity
-import PhysicalLoF.Math.ModularCycles         -- The Vortex Proof (Tesla Code)
-
 
 namespace PhysicalLoF
 
 open Foundations
-open Complexity
-open Cybernetica
--- open Logic  -- Disabled with Goedel.lean
 
 end PhysicalLoF
