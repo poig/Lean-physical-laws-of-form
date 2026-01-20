@@ -78,15 +78,25 @@ theorem quasi_set_connection {U : Type*} (M : MetaDistinction U) :
   - **Identity types**: Id(A, a, b) is the type of "paths" from a to b
   - **Univalence Axiom**: (A ≃ B) ≃ (A = B) — equivalence IS identity
 
-  Connection to our theory:
-  - HoTT asks "how many ways can things be the same?"
-  - We ask "what makes things different?"
-  - These are DUAL perspectives!
+  Connection to our theory (important nuance):
+  - HoTT enriches *equality*: the identity type can carry higher structure.
+  - Our current foundation enriches *inequality* ("distinction") by treating it
+    as the starting point for collapse/capacity/emergence arguments.
+
+  This project is therefore **not** "HoTT implemented in Lean" and is not a
+  super-foundation that subsumes HoTT in a formal sense.
+  The intended claim is weaker and meta-level:
+  - Any nontrivial discourse about identity/sameness presupposes some notion of
+    distinguishability (at least at the level of propositions).
+  - HoTT studies the *space of identifications*; we study constraints and
+    consequences of *separations*.
 
   Reference: Univalent Foundations Program. (2013). "Homotopy Type Theory"
 -/
 structure HoTTInterpretation where
-  -- In HoTT, identity has structure
+  /-- In HoTT, identity has structure (paths). This is only a schematic interface.
+      In actual HoTT, path types are given by the identity type, and one also has
+      higher paths, univalence, and (often) higher inductive types. -/
   pathSpace : (a b : Type) → Type
   -- Paths can be composed
   compose : ∀ a b c, pathSpace a b → pathSpace b c → pathSpace a c
@@ -95,7 +105,14 @@ structure HoTTInterpretation where
 
 /--
   **CONNECTION**: The Univalence Axiom says equivalence = identity.
-  In our terms: if you can't distinguish A from B in any way, they ARE the same.
+  In our terms: "indistinguishable for all predicates" is an *extensional* notion
+  of sameness.
+
+  NOTE:
+  - This file does **not** prove univalence.
+  - The statement below is recorded as an axiom to document the conceptual link.
+  - If you want a formal HoTT development, you'd typically work in a HoTT library
+    (or a separate kernel) where identity types and univalence are native.
 
   Note: Univalence is an AXIOM in HoTT, not provable in standard type theory.
   We state it as an axiom here to document the connection.
@@ -208,7 +225,7 @@ def possibility (I : ModalS5Interpretation) (P : I.World → Prop) (w : I.World)
   |---------------|-----------------------------------|-------------------------|
   | ZFC           | When is x ∈ y?                    | Membership IS distinction |
   | Category      | When are objects isomorphic?      | Morphisms MEASURE distinction |
-  | HoTT          | How many ways to be equal?        | Paths ARE distinctions |
+  | HoTT          | How many ways to be equal?        | Paths structure identity; non-identity induces separation |
   | Quasi-Set     | What if identity is undefined?    | Distinction CAN fail |
   | Modal S5      | What is necessary truth?          | Invariance under distinction |
   | Laws of Form  | What is the primitive?            | Distinction itself |
@@ -216,7 +233,7 @@ def possibility (I : ModalS5Interpretation) (P : I.World → Prop) (w : I.World)
   DISTINCTION is the meta-concept that unifies all foundations.
 -/
 theorem all_foundations_use_distinction :
-    -- Every foundational system with equality uses distinction
+  -- Any system with decidable equality supports a binary notion of distinction.
     ∀ (System : Type) [DecidableEq System],
       -- The decidable equality IS distinction
       (∀ x y : System, x = y ∨ x ≠ y) :=
